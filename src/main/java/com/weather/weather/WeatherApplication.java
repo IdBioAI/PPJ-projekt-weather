@@ -16,6 +16,7 @@ public class WeatherApplication {
 
     private static MySqlService mySqlService;
     private static MongoDBService mongoDBService;
+    private static OpenWeatherService openWeatherService;
 
     public static void main(String[] args) {
        SpringApplication.run(WeatherApplication.class, args);
@@ -29,17 +30,23 @@ public class WeatherApplication {
         WeatherApplication.mongoDBService = mongoDBService;
     }
 
+    public static void SetOpenWeatherService(OpenWeatherService openWeatherService){
+        WeatherApplication.openWeatherService = openWeatherService;
+    }
+
+
     public static void WriteToLog(String msg){
         log.info(msg);
     }
 
-
-    public static MySqlService getMySqlService() {
+    public static MySqlService GetMySqlService() {
         return mySqlService;
     }
 
-    public static MongoDBService getMongoDBService() {
+    public static MongoDBService GetMongoDBService() {
         return mongoDBService;
     }
+
+    public static OpenWeatherService GetOpenWeatherService(){ return openWeatherService;}
 
 }

@@ -19,13 +19,18 @@ public class mainPage {
 
         try {
 
-            List<CityMg> cities = WeatherApplication.getMongoDBService().SelectValues();
+            String stateName = WeatherApplication.GetMySqlService().SelectState().get(0).getStateName();
+            List<CityMg> cities = WeatherApplication.GetMongoDBService().SelectValues();
+            List<String> states = WeatherApplication.GetOpenWeatherService().GetAllCountries();
+            List<String> citesOfState = WeatherApplication.GetOpenWeatherService().GetAllCities(stateName);
 
             Template t = ve.getTemplate("template/index.vn");
 
             VelocityContext vc = new VelocityContext();
-            vc.put("hello", "Počasí pro stát " + WeatherApplication.getMySqlService().SelectState().get(0).getStateName());
+            vc.put("hello", "Počasí pro stát " + stateName);
             vc.put("cities", cities);
+            vc.put("states", states);
+            vc.put("citiesOfC", citesOfState);
 
             StringWriter sw = new StringWriter();
             t.merge(vc, sw);
