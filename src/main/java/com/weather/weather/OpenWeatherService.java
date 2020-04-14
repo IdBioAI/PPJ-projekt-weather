@@ -11,7 +11,7 @@ public class OpenWeatherService {
     public OpenWeatherService(){
 
         try{
-            // declaring object of "OWM" class
+
             OWM owm = new OWM("82ca724eba719259cc2fa548dbe11898");
             owm.setUnit(OWM.Unit.METRIC);
 

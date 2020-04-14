@@ -1,42 +1,39 @@
 package com.weather.weather;
 
-import com.weather.models.State;
+import com.weather.model.State;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
-@ComponentScan(basePackages={"com.weather.models"})
+@ComponentScan(basePackages={"com.weather.model"})
 @EnableAutoConfiguration
 public class MySqlService {
-
+// spring data jpa repozitáře (repozitories) (criteria API)
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    MySqlService mySqlService;
 
     @Autowired
     State state;
 
     public MySqlService(){
-
     }
 
     @PostConstruct
     public void Init() {
-       // System.out.println(SelectState());
+        WeatherApplication.SetMySqlService(mySqlService);
     }
 
     public List<State> SelectState(){
+
         try {
         return jdbcTemplate.query(
                 "SELECT * FROM state",

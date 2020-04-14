@@ -1,6 +1,7 @@
 package com.weather.rest;
 
-import com.weather.models.State;
+import com.weather.model.State;
+import com.weather.view.mainPage;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,13 +9,16 @@ public class RestControl {
 
    @GetMapping("/state")
     String GetStateInfo() {
-        return "State info";
+       mainPage m = new mainPage();
+        return m.ShowMainPage();
 
     }
 
     @PostMapping("/state")
     String UpdateState(@RequestBody State state) {
-        return "Update state";
+
+       return "Update state";
+
     }
 
 }

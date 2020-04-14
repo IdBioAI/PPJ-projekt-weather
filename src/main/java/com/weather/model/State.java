@@ -1,6 +1,5 @@
-package com.weather.models;
+package com.weather.model;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 @Controller
