@@ -43,4 +43,9 @@ public class MongoDBService {
     }
 
 
+    public void AddCity(String city) {
+    }
+
+    public void DeleteCity(String city) {
+    }
 }

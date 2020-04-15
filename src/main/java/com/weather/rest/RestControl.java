@@ -2,23 +2,36 @@ package com.weather.rest;
 
 import com.weather.model.State;
 import com.weather.view.mainPage;
+import com.weather.weather.WeatherApplication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestControl {
 
-   @GetMapping("/state")
+   @GetMapping("/")
     String GetStateInfo() {
        mainPage m = new mainPage();
         return m.ShowMainPage();
 
     }
 
-    @PostMapping("/state")
-    String UpdateState(@RequestBody State state) {
+    @PostMapping("/state/change")
+    String UpdateState(@RequestParam("State")  String city) {
+        return GetStateInfo();
 
-       return "Update state";
+    }
 
+    @PostMapping("/city/add")
+    String AddCity(@RequestParam("City")  String city) {
+        WeatherApplication.GetMongoDBService().AddCity(city);
+        return GetStateInfo();
+
+    }
+
+    @DeleteMapping("/city/delete")
+    String DeleteCity(@RequestParam("City")  String city) {
+        WeatherApplication.GetMongoDBService().DeleteCity(city);
+        return GetStateInfo();
     }
 
 }

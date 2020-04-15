@@ -96,22 +96,27 @@
             <div class="col-lg-12 text-center">
                <h1 class="mt-5">$hello</h1>
                <p class="lead">Změnit předpověď pro stát: </p>
-               <form autocomplete="off" action="/action_page.php">
+               <form autocomplete="off" action="/state/change" method="post">
                   <div class="autocomplete" style="width:300px;">
-                     <input id="myInput" type="text" name="myCountry" placeholder="Zadejte stát">
+                     <input id="myInput" type="text" name="State" placeholder="Zadejte stát">
                   </div>
                   <input type="submit">
                </form>
                <p class="lead">Přidat město: </p>
-               <form autocomplete="off" action="/action_page.php">
+               <form autocomplete="off" action="/city/add" method="post">
                   <div class="autocomplete" style="width:300px;">
-                     <input id="myInput2" type="text" name="myCountry" placeholder="Zadejte město">
+                     <input id="myInput2" type="text" name="City" placeholder="Zadejte město">
                   </div>
                   <input type="submit">
                </form>
                <ul class="list-unstyled">
                   #foreach( $city in $cities )
-                  <li>$city.name - $city.temp</li>
+                  <li>
+                  <form action="" method="post">
+                      $city.name - $city.temp <input type="submit" name="$city.name" value="Upvote" />
+                  </form>
+
+                  </li>
                   #end
                </ul>
             </div>
