@@ -1,11 +1,9 @@
-package com.weather.weather;
+/*package com.weather.weather.services;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
 
 @Configuration
 @ConfigurationProperties(prefix = "spring.datasource")
@@ -49,3 +47,4 @@ public class DBConfiguration {
     }
 
 }
+*/

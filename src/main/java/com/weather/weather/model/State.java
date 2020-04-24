@@ -1,11 +1,14 @@
-package com.weather.model;
+package com.weather.weather.model;
 
-import org.springframework.stereotype.Controller;
 
-@Controller
+import javax.persistence.*;
+
+@Entity
 public class State {
 
+    @Id
     int id;
+    @Column(name="stateName")
     String stateName;
 
     public State(int id, String stateName) {

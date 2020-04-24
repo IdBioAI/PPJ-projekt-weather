@@ -1,6 +1,5 @@
-package com.weather.weather;
+package com.weather.weather.model;
 
-import com.weather.model.CityMg;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

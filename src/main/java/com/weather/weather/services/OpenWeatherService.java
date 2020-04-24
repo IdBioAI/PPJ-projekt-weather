@@ -1,24 +1,20 @@
-package com.weather.weather;
+package com.weather.weather.services;
 
+import com.weather.weather.Main;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.HourlyWeatherForecast;
-import org.apache.tomcat.util.json.JSONParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -61,21 +57,24 @@ public class OpenWeatherService {
 
     @PostConstruct
     public void Init() {
-        WeatherApplication.SetOpenWeatherService(openWeatherService);
+      //  WeatherApplication.SetOpenWeatherService(openWeatherService);
+        Main.setOpenWeatherService(this);
     }
 
     public List<String> GetAllCountries(){
         List<String> c = new ArrayList<String>();
+        ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
+        File file = new File(classLoader.getResource("countries.json").getFile());
         try {
 
-            JSONArray jsonObject = new JSONArray (ReadFile("countries.json").toString());
+            JSONArray jsonObject = new JSONArray (ReadFile(file.toString()));
             for (int i = 0; i < jsonObject.length(); i++) {
                 c.add((String) jsonObject.getJSONObject(i).get("name"));
             }
             return c;
 
         } catch (Exception e) {
-            WeatherApplication.WriteToLog("Error while loading file countries.json: " + e.getMessage());
+           // WeatherApplication.WriteToLog("Error while loading file countries.json: " + e.getMessage());
         }
         return null;
     }
@@ -92,9 +91,11 @@ public class OpenWeatherService {
 
     public List<String> GetAllCities(String country) {
         List<String> c = new ArrayList<String>();
+        ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
+        File file = new File(classLoader.getResource("countriesCities.json").getFile());
         try {
 
-            JSONObject jsonObject = new JSONObject (ReadFile("countriesCities.json").toString());
+            JSONObject jsonObject = new JSONObject (ReadFile(file.toString()));
            // JSONArray arrayCit = jsonObject.names();
             JSONArray arrayCit = jsonObject.getJSONArray(country);
             for (int i = 0; i < arrayCit.length(); i++) {
@@ -106,7 +107,7 @@ public class OpenWeatherService {
             //return c;
 
         } catch (Exception e) {
-            WeatherApplication.WriteToLog("Error while loading file countriesCities.json: " + e.getMessage());
+           // WeatherApplication.WriteToLog("Error while loading file countriesCities.json: " + e.getMessage());
         }
         return null;
     }
