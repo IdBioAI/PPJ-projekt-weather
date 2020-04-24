@@ -23,11 +23,11 @@ public class MongoDBService {
         Main.setMongoDBService(this);
     }
 
-    public List<CityMg> SelectValues(){
+    public List<CityMg> SelectValues(String name){
         List<CityMg> values = null;
         try {
             values = new ArrayList<CityMg>();
-            cityMgRepository.findAll().forEach(values::add);
+            cityMgRepository.findByName(name).forEach(values::add);
         }catch (Exception e){
             //WeatherApplication.WriteToLog("Error while select mongodb: " + e.getMessage());
             return null;
@@ -35,4 +35,7 @@ public class MongoDBService {
         return values;
     }
 
+    public void deleteCities(String city) {
+        cityMgRepository.deleteByName(city);
+    }
 }

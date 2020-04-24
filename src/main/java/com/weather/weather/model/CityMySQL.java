@@ -1,9 +1,7 @@
 package com.weather.weather.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="city")
@@ -13,6 +11,17 @@ public class CityMySQL {
     @Id
     @Column(name="cityName")
     String cityName;
+
+    @Transient
+    List<CityMg> cities;
+
+    public List<CityMg> getCities() {
+        return cities;
+    }
+
+    public void setCities(List<CityMg> cities) {
+        this.cities = cities;
+    }
 
     public CityMySQL(String cityName) {
         this.cityName = cityName;

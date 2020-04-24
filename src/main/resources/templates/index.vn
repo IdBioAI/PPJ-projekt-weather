@@ -109,13 +109,19 @@
                   </div>
                   <input type="submit" value="Přidat">
                </form>
+               <p></p>
+               <p></p>
+                <p class="lead">Předpovědi</p>
                <ul class="list-unstyled">
                   #foreach( $city in $cities )
                   <li>
-                  <form action="/city/delete" method="delete">
-                      $city.name - $city.temp <input type="submit" name="$city.name" value="X" />
+                  <form action="/city/delete" method="post">
+                      <label >$city.cityName</label> <input type="submit" value="X" />
+                      <input type="hidden" name="City" value="$city.cityName"/>
                   </form>
-
+                      #foreach( $we in $city.cities )
+                        <p>$we.date - teplota: $we.temp, vlhkost: $we.humidity, rychlost větru: $we.windSpeed</p>
+                     #end
                   </li>
                   #end
                </ul>

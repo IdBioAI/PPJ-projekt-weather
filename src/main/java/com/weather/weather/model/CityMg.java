@@ -15,6 +15,7 @@ public class CityMg {
     float windSpeed;
     float deg;
 
+
     public CityMg(String name, String date, float temp, float humidity, float windSpeed, float deg) {
         this.name = name;
         this.date = date;

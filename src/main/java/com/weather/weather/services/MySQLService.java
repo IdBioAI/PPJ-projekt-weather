@@ -36,6 +36,14 @@ public class MySQLService {
         return s;
    }
 
+    public List<CityMySQL> GetAllCities(){
+        List<CityMySQL> s = new ArrayList<CityMySQL>();
+        for(CityMySQL p : cityMySQLRepository.findAll()){
+            s.add(p);
+        }
+        return s;
+    }
+
    public void ChangeState(String name){
         State s = new State(1, name);
         stateRepository.save(s);

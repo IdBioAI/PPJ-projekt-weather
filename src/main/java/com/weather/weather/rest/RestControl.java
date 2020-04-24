@@ -40,9 +40,10 @@ public class RestControl {
 
     }
 
-    @DeleteMapping("/city/delete")
+    @PostMapping("/city/delete")
     void DeleteCity(HttpServletResponse response,@RequestParam("City")  String city) {
         Main.getMySQLService().DeleteCity(city);
+        Main.getMongoDBService().deleteCities(city);
         try {
             response.sendRedirect("/");
         } catch (IOException e) {

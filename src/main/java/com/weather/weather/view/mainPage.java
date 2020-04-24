@@ -3,6 +3,7 @@ package com.weather.weather.view;
 
 import com.weather.weather.Main;
 import com.weather.weather.model.CityMg;
+import com.weather.weather.model.CityMySQL;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -25,10 +26,11 @@ public class mainPage {
         try {
 
             String stateName = Main.getMySQLService().GetState().get(0).getStateName();
-            List<CityMg> cities = Main.getMongoDBService().SelectValues();
+            //List<CityMg> cities = Main.getMongoDBService().SelectValues();
+            List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
+            findWeather(cities);
             List<String> states = Main.getOpenWeatherService().GetAllCountries();
             List<String> citesOfState = Main.getOpenWeatherService().GetAllCities(stateName);
-
             Template t = ve.getTemplate("templates/index.vn", "UTF-8");
 
             VelocityContext vc = new VelocityContext();
@@ -46,6 +48,12 @@ public class mainPage {
         }
        // return readAllBytesJava7("templates/index.html");
         return null;
+    }
+
+    private void findWeather(List<CityMySQL> cities) {
+        for(CityMySQL c : cities){
+            c.setCities(Main.getMongoDBService().SelectValues(c.getCityName()));
+        }
     }
 
 }
