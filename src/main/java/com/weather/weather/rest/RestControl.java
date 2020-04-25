@@ -18,7 +18,7 @@ public class RestControl {
 
     }
 
-    @PutMapping("/state/change")
+    @PostMapping("/state/change")
     void UpdateState(HttpServletResponse response, @RequestParam("State")  String state) {
         Main.getMySQLService().ChangeState(state);
         try {
