@@ -3,20 +3,31 @@ package com.weather.weather.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Transient;
+
 @Document("values")
 public class CityMg {
 
     @Id
     String id;
     String name;
-    String date;
+    long date; //UTC+2 hodiny
     float temp;
     float humidity;
     float windSpeed;
     float deg;
+    @Transient
+    String dateStr;
 
+    public String getDateStr() {
+        return dateStr;
+    }
 
-    public CityMg(String name, String date, float temp, float humidity, float windSpeed, float deg) {
+    public void setDateStr(String dateStr) {
+        this.dateStr = dateStr;
+    }
+
+    public CityMg(String name, long date, float temp, float humidity, float windSpeed, float deg) {
         this.name = name;
         this.date = date;
         this.temp = temp;
@@ -26,7 +37,6 @@ public class CityMg {
     }
 
     public CityMg(){
-
     }
 
     public String getName() {
@@ -37,11 +47,11 @@ public class CityMg {
         this.name = name;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 

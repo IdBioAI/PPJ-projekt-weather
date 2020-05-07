@@ -14,6 +14,16 @@ public class CityMySQL {
 
     @Transient
     List<CityMg> cities;
+    @Transient
+    float averageTemp;
+
+    public float getAverageTemp() {
+        return averageTemp;
+    }
+
+    public void setAverageTemp(float averageTemp) {
+        this.averageTemp = averageTemp;
+    }
 
     public List<CityMg> getCities() {
         return cities;

@@ -11,6 +11,8 @@ import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -29,6 +31,8 @@ public class mainPage {
             //List<CityMg> cities = Main.getMongoDBService().SelectValues();
             List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
             findWeather(cities);
+            calculateAverageTemp(cities);
+            UnixTimeToDate(cities);
             List<String> states = Main.getOpenWeatherService().GetAllCountries();
             List<String> citesOfState = Main.getOpenWeatherService().GetAllCities(stateName);
             Template t = ve.getTemplate("templates/index.vn", "UTF-8");
@@ -48,6 +52,44 @@ public class mainPage {
         }
        // return readAllBytesJava7("templates/index.html");
         return null;
+    }
+
+    private void UnixTimeToDate(List<CityMySQL> cities) {
+        Date date;
+        SimpleDateFormat sdf;
+        for(CityMySQL c : cities){
+            for(CityMg cityData : c.getCities()) {
+                date = new java.util.Date((long)cityData.getDate()*1000L);
+                sdf = new java.text.SimpleDateFormat("dd-MM-yyy HH:mm:ss");
+                cityData.setDateStr(sdf.format(date));
+            }
+        }
+    }
+
+    public static long TimeToUnix(String timestamp) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy HH:mm:ss");
+            Date dt = sdf.parse(timestamp);
+            long epoch = dt.getTime();
+            return (epoch / 1000);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    private void calculateAverageTemp(List<CityMySQL> cities) {
+        float avg = 0;
+        int total = 0;
+        for(CityMySQL c : cities){
+            avg = 0;
+            total = 0;
+            for(CityMg cityData : c.getCities()) {
+                avg += cityData.getTemp();
+                total++;
+            }
+            avg /= total;
+            c.setAverageTemp(Math.round(avg * 100) / 100f);
+        }
     }
 
     private void findWeather(List<CityMySQL> cities) {

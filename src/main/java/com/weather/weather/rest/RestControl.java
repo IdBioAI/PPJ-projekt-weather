@@ -51,4 +51,14 @@ public class RestControl {
         }
     }
 
+    @PostMapping("/temp/delete")
+    void DeleteTemp(HttpServletResponse response,@RequestParam("City")  String city, @RequestParam("Date")  String date) {
+        Main.getMongoDBService().deleteDate(city, date);
+        try {
+            response.sendRedirect("/");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

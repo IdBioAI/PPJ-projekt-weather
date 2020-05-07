@@ -9,4 +9,5 @@ import java.util.List;
 public interface CityMgRepository extends MongoRepository<CityMg, Integer> {
     public List<CityMg> findByName(String name);
     public void deleteByName(String name);
+    public void deleteByDateAndName(long date, String name);
 }
