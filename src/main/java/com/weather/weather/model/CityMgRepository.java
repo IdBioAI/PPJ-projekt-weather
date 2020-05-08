@@ -8,6 +8,7 @@ import java.util.List;
 @Repository
 public interface CityMgRepository extends MongoRepository<CityMg, Integer> {
     public List<CityMg> findByName(String name);
+    public List<CityMg> findByNameAndDateGreaterThan(String name, long value);
     public void deleteByName(String name);
     public void deleteByDateAndName(long date, String name);
 }

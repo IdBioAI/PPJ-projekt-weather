@@ -29,11 +29,11 @@ public class MongoDBService {
 
     }
 
-    public List<CityMg> SelectValues(String name){
+    public List<CityMg> SelectValues(String name, int week){
         List<CityMg> values = null;
         try {
             values = new ArrayList<CityMg>();
-            cityMgRepository.findByName(name).forEach(values::add);
+            cityMgRepository.findByNameAndDateGreaterThan(name, week).forEach(values::add);
         }catch (Exception e){
             //WeatherApplication.WriteToLog("Error while select mongodb: " + e.getMessage());
             return null;

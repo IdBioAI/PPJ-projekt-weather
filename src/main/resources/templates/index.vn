@@ -81,10 +81,10 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">týden</a>
+                     <a class="nav-link" href="/week">týden</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">14 dní</a>
+                     <a class="nav-link" href="/week2">14 dní</a>
                   </li>
                </ul>
             </div>
@@ -116,22 +116,38 @@
                   #foreach( $city in $cities )
                   <li>
                   <form action="/city/delete" method="post">
-                      <label >$city.cityName ~$city.averageTemp °C</label> <input type="submit" value="X" />
+                      <label >$city.cityName ~$city.averageTemp °C</label> <input style="padding: 3px" type="submit" value="X" />
                       <input type="hidden" name="City" value="$city.cityName"/>
                   </form>
+                  <button onClick="clc('div$city.cityName')">Předpověď</button>
+                    <div id="div$city.cityName" style="display:none">
                       #foreach( $we in $city.cities )
                       <form action="/temp/delete" method="post">
-                        <p>$we.dateStr - teplota: $we.temp, vlhkost: $we.humidity, rychlost větru: $we.windSpeed<input type="submit" value="x" /></p>
+                        <p>$we.dateStr - teplota: $we.temp, vlhkost: $we.humidity, rychlost větru: $we.windSpeed <input style="padding: 3px" type="submit" value="x" /></p>
                         <input type="hidden" name="City" value="$city.cityName"/>
                         <input type="hidden" name="Date" value="$we.date"/>
                       </form>
                      #end
+                     </div>
                   </li>
                   #end
                </ul>
             </div>
          </div>
       </div>
+
+    <script>
+    function clc(divShowHide) {
+       console.log("---");
+       console.log(divShowHide);
+      var x = document.getElementById(divShowHide);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
 
       <script>
          function autocomplete(inp, arr) {

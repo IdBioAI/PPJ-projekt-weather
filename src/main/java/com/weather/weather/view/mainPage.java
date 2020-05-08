@@ -12,13 +12,15 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 
 public class mainPage {
 
-    public String ShowMainPage(){
+    public String ShowMainPage(int week){
 
         VelocityEngine ve = new VelocityEngine();
         ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
@@ -30,7 +32,7 @@ public class mainPage {
             String stateName = Main.getMySQLService().GetState().get(0).getStateName();
             //List<CityMg> cities = Main.getMongoDBService().SelectValues();
             List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
-            findWeather(cities);
+            findWeather(cities, week);
             calculateAverageTemp(cities);
             UnixTimeToDate(cities);
             List<String> states = Main.getOpenWeatherService().GetAllCountries();
@@ -92,9 +94,20 @@ public class mainPage {
         }
     }
 
-    private void findWeather(List<CityMySQL> cities) {
+    private void findWeather(List<CityMySQL> cities, int week) {
+        if(week == 0) {
+            long epoch = Instant.now().getEpochSecond() - 86400;
+        }
+        else if(week == 1) {
+            long epoch = Instant.now().getEpochSecond() - 604800;
+        }
+
+        else if(week == 2) {
+            long epoch = Instant.now().getEpochSecond() - 1209600;
+        }
+
         for(CityMySQL c : cities){
-            c.setCities(Main.getMongoDBService().SelectValues(c.getCityName()));
+            c.setCities(Main.getMongoDBService().SelectValues(c.getCityName(), week));
         }
     }
 

@@ -14,8 +14,19 @@ public class RestControl {
    @GetMapping("/")
     String GetStateInfo() {
        mainPage m = new mainPage();
-        return m.ShowMainPage();
+        return m.ShowMainPage(0);
 
+    }
+    @GetMapping("/week")
+    String getWeekInfo() {
+        mainPage m = new mainPage();
+        return m.ShowMainPage(1);
+    }
+
+    @GetMapping("/week2")
+    String getWeek2Info() {
+        mainPage m = new mainPage();
+        return m.ShowMainPage(2);
     }
 
     @PostMapping("/state/change")
