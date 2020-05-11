@@ -3,7 +3,6 @@ package com.weather.weather.services;
 import com.weather.weather.Main;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMgRepository;
-import com.weather.weather.view.mainPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -29,7 +28,7 @@ public class MongoDBService {
 
     }
 
-    public List<CityMg> SelectValues(String name, int week){
+    public List<CityMg> SelectValues(String name, long week){
         List<CityMg> values = null;
         try {
             values = new ArrayList<CityMg>();

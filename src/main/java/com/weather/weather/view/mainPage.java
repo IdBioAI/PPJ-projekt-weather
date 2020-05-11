@@ -2,6 +2,7 @@ package com.weather.weather.view;
 
 
 import com.weather.weather.Main;
+import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
 import org.apache.velocity.Template;
@@ -9,6 +10,8 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
@@ -17,8 +20,11 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+@Controller
+public class MainPage {
 
-public class mainPage {
+    @Autowired
+    ConfigProperties configProperties;
 
     public String ShowMainPage(int week){
 
@@ -44,6 +50,7 @@ public class mainPage {
             vc.put("cities", cities);
             vc.put("states", states);
             vc.put("citiesOfC", citesOfState);
+            vc.put("readOnly", configProperties.isReadOnly());
 
             StringWriter sw = new StringWriter();
             t.merge(vc, sw);
@@ -95,19 +102,20 @@ public class mainPage {
     }
 
     private void findWeather(List<CityMySQL> cities, int week) {
+        long epoch = 0;
         if(week == 0) {
-            long epoch = Instant.now().getEpochSecond() - 86400;
+            epoch = Instant.now().getEpochSecond() - 86400;
         }
         else if(week == 1) {
-            long epoch = Instant.now().getEpochSecond() - 604800;
+            epoch = Instant.now().getEpochSecond() - 604800;
         }
 
         else if(week == 2) {
-            long epoch = Instant.now().getEpochSecond() - 1209600;
+            epoch = Instant.now().getEpochSecond() - 1209600;
         }
 
         for(CityMySQL c : cities){
-            c.setCities(Main.getMongoDBService().SelectValues(c.getCityName(), week));
+            c.setCities(Main.getMongoDBService().SelectValues(c.getCityName(), epoch));
         }
     }
 

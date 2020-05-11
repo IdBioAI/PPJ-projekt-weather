@@ -1,5 +1,6 @@
 package com.weather.weather;
 
+import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.State;
 import com.weather.weather.services.MongoDBService;
 import com.weather.weather.services.MySQLService;
@@ -10,10 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 //@EnableWebMvc
 @SpringBootApplication
+//@EnableConfigurationProperties
+@ConfigurationPropertiesScan("com.weather.weather.configurations")
 public class Main {
 
     private static final Logger log = LoggerFactory.getLogger(Main.class);
@@ -48,5 +53,9 @@ public class Main {
 
     public static void setOpenWeatherService(OpenWeatherService openWeatherService) {
         Main.openWeatherService = openWeatherService;
+    }
+
+    public static Logger getLog(){
+        return log;
     }
 }

@@ -2,7 +2,9 @@ package com.weather.weather.rest;
 
 
 import com.weather.weather.Main;
-import com.weather.weather.view.mainPage;
+import com.weather.weather.configurations.ConfigProperties;
+import com.weather.weather.view.MainPage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -11,26 +13,31 @@ import java.io.IOException;
 @RestController
 public class RestControl {
 
+    @Autowired
+    MainPage mainPage;
+    @Autowired
+    ConfigProperties configProperties;
+
    @GetMapping("/")
     String GetStateInfo() {
-       mainPage m = new mainPage();
-        return m.ShowMainPage(0);
+        return mainPage.ShowMainPage(0);
 
     }
     @GetMapping("/week")
     String getWeekInfo() {
-        mainPage m = new mainPage();
-        return m.ShowMainPage(1);
+        return mainPage.ShowMainPage(1);
     }
 
     @GetMapping("/week2")
     String getWeek2Info() {
-        mainPage m = new mainPage();
-        return m.ShowMainPage(2);
+        return mainPage.ShowMainPage(2);
     }
 
     @PostMapping("/state/change")
     void UpdateState(HttpServletResponse response, @RequestParam("State")  String state) {
+
+        if(configProperties.isReadOnly()){ return; }
+
         Main.getMySQLService().ChangeState(state);
         try {
             response.sendRedirect("/");
@@ -42,6 +49,9 @@ public class RestControl {
 
     @PostMapping("/city/add")
     void AddCity(HttpServletResponse response,@RequestParam("City")  String city) {
+
+        if(configProperties.isReadOnly()){ return; }
+
         Main.getMySQLService().AddCity(city);
         try {
             response.sendRedirect("/");
@@ -53,6 +63,9 @@ public class RestControl {
 
     @PostMapping("/city/delete")
     void DeleteCity(HttpServletResponse response,@RequestParam("City")  String city) {
+
+        if(configProperties.isReadOnly()){ return; }
+
         Main.getMySQLService().DeleteCity(city);
         Main.getMongoDBService().deleteCities(city);
         try {
@@ -64,6 +77,9 @@ public class RestControl {
 
     @PostMapping("/temp/delete")
     void DeleteTemp(HttpServletResponse response,@RequestParam("City")  String city, @RequestParam("Date")  String date) {
+
+        if(configProperties.isReadOnly()){ return; }
+
         Main.getMongoDBService().deleteDate(city, date);
         try {
             response.sendRedirect("/");

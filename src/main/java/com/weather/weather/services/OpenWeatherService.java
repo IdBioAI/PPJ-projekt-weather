@@ -1,6 +1,7 @@
 package com.weather.weather.services;
 
 import com.weather.weather.Main;
+import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
 import com.weather.weather.model.Config;
@@ -33,7 +34,8 @@ public class OpenWeatherService {
     OpenWeatherService openWeatherService;
     @Autowired
     ConfigRepository configRepository;
-
+    @Autowired
+    ConfigProperties configProperties;
 
     TimerTask timerTask;
 
@@ -54,7 +56,8 @@ public class OpenWeatherService {
     }
 
     public void updateTime(){
-        time = Integer.parseInt(configRepository.findByName("timeUpdate").getValue());
+        //time = Integer.parseInt(configRepository.findByName("timeUpdate").getValue());
+        time = configProperties.getUpdateTime();
         startUpdating();
     }
 

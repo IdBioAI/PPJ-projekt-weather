@@ -76,7 +76,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                     <a class="nav-link" href="#">den
+                     <a class="nav-link" href="/">den
                      <span class="sr-only">(current)</span>
                      </a>
                   </li>
@@ -95,20 +95,22 @@
          <div class="row">
             <div class="col-lg-12 text-center">
                <h1 class="mt-5">$hello</h1>
-               <p class="lead">Změnit předpověď pro stát: </p>
-               <form autocomplete="off" action="/state/change" method="post">
-                  <div class="autocomplete" style="width:300px;">
-                     <input id="myInput" type="text" name="State" placeholder="Zadejte stát">
-                  </div>
-                  <input type="submit" value="Změnit">
-               </form>
-               <p class="lead">Přidat město: </p>
-               <form autocomplete="off" action="/city/add" method="post">
-                  <div class="autocomplete" style="width:300px;">
-                     <input id="myInput2" type="text" name="City" placeholder="Zadejte město">
-                  </div>
-                  <input type="submit" value="Přidat">
-               </form>
+               #if( $readOnly == false )
+                   <p class="lead">Změnit předpověď pro stát: </p>
+                   <form autocomplete="off" action="/state/change" method="post">
+                      <div class="autocomplete" style="width:300px;">
+                         <input id="myInput" type="text" name="State" placeholder="Zadejte stát">
+                      </div>
+                      <input type="submit" value="Změnit">
+                   </form>
+                   <p class="lead">Přidat město: </p>
+                   <form autocomplete="off" action="/city/add" method="post">
+                      <div class="autocomplete" style="width:300px;">
+                         <input id="myInput2" type="text" name="City" placeholder="Zadejte město">
+                      </div>
+                      <input type="submit" value="Přidat">
+                   </form>
+               #end
                <p></p>
                <p></p>
                 <p class="lead">Předpovědi</p>
@@ -116,14 +118,14 @@
                   #foreach( $city in $cities )
                   <li>
                   <form action="/city/delete" method="post">
-                      <label >$city.cityName ~$city.averageTemp °C</label> <input style="padding: 3px" type="submit" value="X" />
+                      <label >$city.cityName ~$city.averageTemp °C</label> #if( $readOnly == false ) <input style="padding: 3px" type="submit" value="X" />  #end
                       <input type="hidden" name="City" value="$city.cityName"/>
                   </form>
                   <button onClick="clc('div$city.cityName')">Předpověď</button>
                     <div id="div$city.cityName" style="display:none">
                       #foreach( $we in $city.cities )
                       <form action="/temp/delete" method="post">
-                        <p>$we.dateStr - teplota: $we.temp, vlhkost: $we.humidity, rychlost větru: $we.windSpeed <input style="padding: 3px" type="submit" value="x" /></p>
+                        <p>$we.dateStr - teplota: $we.temp, vlhkost: $we.humidity, rychlost větru: $we.windSpeed #if( $readOnly == false ) <input style="padding: 3px" type="submit" value="x" /></p> #end
                         <input type="hidden" name="City" value="$city.cityName"/>
                         <input type="hidden" name="Date" value="$we.date"/>
                       </form>
