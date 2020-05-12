@@ -122,6 +122,16 @@
                       <input type="hidden" name="City" value="$city.cityName"/>
                   </form>
                   <button onClick="clc('div$city.cityName')">Předpověď</button>
+                  #if( $readOnly == false )
+                    <form action="/city/export/$city.cityName" method="post">
+                         <input style="padding: 3px" type="submit" value="export" />
+                    </form>
+                    <form action="/city/import" method="post" enctype="multipart/form-data">
+                        <input id="file" type="file" name="file" class="file-input" required />
+                        <p></p>
+                        <input style="padding: 3px" type="submit" value="Import" />
+                    </form>
+                  #end
                     <div id="div$city.cityName" style="display:none">
                       #foreach( $we in $city.cities )
                       <form action="/temp/delete" method="post">
