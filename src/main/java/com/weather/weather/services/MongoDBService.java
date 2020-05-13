@@ -40,6 +40,18 @@ public class MongoDBService {
         return values;
     }
 
+    public List<CityMg> SelectValuesByName(String name){
+        List<CityMg> values = null;
+        try {
+            values = new ArrayList<CityMg>();
+            cityMgRepository.findByName(name).forEach(values::add);
+        }catch (Exception e){
+            //WeatherApplication.WriteToLog("Error while select mongodb: " + e.getMessage());
+            return null;
+        }
+        return values;
+    }
+
     public void SaveData(CityMg cityMg){
         cityMgRepository.save(cityMg);
     }
