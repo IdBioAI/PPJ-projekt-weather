@@ -1,6 +1,5 @@
 package com.weather.weather.rest;
 
-
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -13,42 +12,39 @@ import com.weather.weather.model.CityMg;
 import com.weather.weather.view.MainPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.net.URLConnection;
+import java.io.IOException;
+import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
-import java.util.List;
 
 @RestController
-public class RestControl {
+public class WebControl {
 
     @Autowired
     MainPage mainPage;
-    @Autowired
     ConfigProperties configProperties;
     @Autowired
     FileStorageProperties fileStorageProperties;
 
-   @GetMapping("/")
-    String GetStateInfo() {
+    @GetMapping("/")
+    public String GetStateInfo() {
         return mainPage.ShowMainPage(0);
-
     }
+
     @GetMapping("/week")
-    String getWeekInfo() {
+    public String getWeekInfo() {
         return mainPage.ShowMainPage(1);
     }
 
     @GetMapping("/week2")
-    String getWeek2Info() {
+    public String getWeek2Info() {
         return mainPage.ShowMainPage(2);
     }
 
@@ -87,7 +83,7 @@ public class RestControl {
             response.sendRedirect("/");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            Main.getLog().error(e.getMessage());
         }
     }
 
@@ -111,7 +107,7 @@ public class RestControl {
             writer.write(Main.getMongoDBService().SelectValuesByName(filename));
 
         }catch (Exception ex){
-            // TODO vypsání do logu
+            Main.getLog().error(ex.getMessage());
         }
 
         /*try {
@@ -136,61 +132,6 @@ public class RestControl {
             // TODO vypsání do logu
         }*/
 
-    }
-
-    @PostMapping("/state/change")
-    void UpdateState(HttpServletResponse response, @RequestParam("State")  String state) {
-
-        if(configProperties.isReadOnly()){ return; }
-
-        Main.getMySQLService().ChangeState(state);
-        try {
-            response.sendRedirect("/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @PostMapping("/city/add")
-    void AddCity(HttpServletResponse response,@RequestParam("City")  String city) {
-
-        if(configProperties.isReadOnly()){ return; }
-
-        Main.getMySQLService().AddCity(city);
-        try {
-            response.sendRedirect("/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @PostMapping("/city/delete")
-    void DeleteCity(HttpServletResponse response,@RequestParam("City")  String city) {
-
-        if(configProperties.isReadOnly()){ return; }
-
-        Main.getMySQLService().DeleteCity(city);
-        Main.getMongoDBService().deleteCities(city);
-        try {
-            response.sendRedirect("/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @PostMapping("/temp/delete")
-    void DeleteTemp(HttpServletResponse response,@RequestParam("City")  String city, @RequestParam("Date")  String date) {
-
-        if(configProperties.isReadOnly()){ return; }
-
-        Main.getMongoDBService().deleteDate(city, date);
-        try {
-            response.sendRedirect("/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

@@ -28,6 +28,10 @@ public class MySQLService {
         Main.setMySQLService(this);
     }
 
+    public void deleteAll(){
+        cityMySQLRepository.deleteAll();
+    }
+
    public List<State> GetState(){
        List<State> s = new ArrayList<State>();
        for(State p : stateRepository.findAll()){

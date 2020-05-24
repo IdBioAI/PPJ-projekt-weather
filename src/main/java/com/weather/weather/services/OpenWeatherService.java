@@ -61,9 +61,11 @@ public class OpenWeatherService {
         startUpdating();
     }
 
-    public static void update(){
-
+    public void update(){
         try{
+
+            if(configProperties.isUpdate()){ return; }
+
             List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
             OWM owm = new OWM("82ca724eba719259cc2fa548dbe11898");
             owm.setUnit(OWM.Unit.METRIC);
@@ -74,9 +76,7 @@ public class OpenWeatherService {
                 // System.out.println("City: " + cwd.getCityData().getName());
                 // System.out.println("City: " + cwd.get);
                 // System.out.println("City: " + cwd.getMessage());
-
-
-                System.out.println(CurrentWeather.toJson(cwd));
+              //  System.out.println(CurrentWeather.toJson(cwd));
 	        /*CurrentWeather cwd = owm.currentWeatherByCityName("Varnsdorf", OWM.Country.CZECH_REPUBLIC);
 	        System.out.println("City: " + cwd.getCityName());*/
 
@@ -85,9 +85,11 @@ public class OpenWeatherService {
                 //                   + "/" + cwd.getMainData().getTempMin() + "\' C");
                 cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), cwd.getMainData().getTemp().floatValue(), cwd.getMainData().getHumidity().floatValue(), cwd.getWindData().getSpeed().floatValue(), cwd.getWindData().getDegree().floatValue());
                 Main.getMongoDBService().SaveData(cityMg);
+                Main.getLog().info(city.getCityName() + " update");
             }
+            Main.getMongoDBService().expiration();
         }catch(Exception ex){
-            System.out.println(ex);
+            Main.getLog().error(ex.getMessage());
         }
 
     }
@@ -113,7 +115,7 @@ public class OpenWeatherService {
             return c;
 
         } catch (Exception e) {
-           // WeatherApplication.WriteToLog("Error while loading file countries.json: " + e.getMessage());
+            Main.getLog().error(e.getMessage());
         }
         return null;
     }
@@ -123,7 +125,7 @@ public class OpenWeatherService {
         try (Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8)) {
             stream.forEach(s -> contentBuilder.append(s).append("\n"));
         } catch (IOException e) {
-            e.printStackTrace();
+            Main.getLog().error(e.getMessage());
         }
         return contentBuilder.toString();
     }
@@ -146,7 +148,7 @@ public class OpenWeatherService {
             //return c;
 
         } catch (Exception e) {
-           // WeatherApplication.WriteToLog("Error while loading file countriesCities.json: " + e.getMessage());
+            Main.getLog().error(e.getMessage());
         }
         return null;
     }

@@ -21,6 +21,12 @@ public class CityMySQL {
         return averageTemp;
     }
 
+    public CityMySQL(String cityName, List<CityMg> cities, float averageTemp) {
+        this.cityName = cityName;
+        this.cities = cities;
+        this.averageTemp = averageTemp;
+    }
+
     public void setAverageTemp(float averageTemp) {
         this.averageTemp = averageTemp;
     }

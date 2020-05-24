@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,12 +21,14 @@ public class MongoDBService {
 
     @PostConstruct
     public void Init(){
-
         Main.setMongoDBService(this);
-        System.out.println("Vytvarim....");
+        //System.out.println("Vytvarim....");
         //CityMg c = new CityMg("Varnsdorf", "2020-04-13 06:00:00", 10.45f, 75.2f, 3.11f, 292.2f);
         //cityMgRepository.save(c);
+    }
 
+    public void deleteAll(){
+        cityMgRepository.deleteAll();
     }
 
     public List<CityMg> SelectValues(String name, long week){
@@ -34,7 +37,7 @@ public class MongoDBService {
             values = new ArrayList<CityMg>();
             cityMgRepository.findByNameAndDateGreaterThan(name, week).forEach(values::add);
         }catch (Exception e){
-            //WeatherApplication.WriteToLog("Error while select mongodb: " + e.getMessage());
+            Main.getLog().error(e.getMessage());
             return null;
         }
         return values;
@@ -46,7 +49,7 @@ public class MongoDBService {
             values = new ArrayList<CityMg>();
             cityMgRepository.findByName(name).forEach(values::add);
         }catch (Exception e){
-            //WeatherApplication.WriteToLog("Error while select mongodb: " + e.getMessage());
+            Main.getLog().error(e.getMessage());
             return null;
         }
         return values;
@@ -58,6 +61,10 @@ public class MongoDBService {
 
     public void deleteCities(String city) {
         cityMgRepository.deleteByName(city);
+    }
+
+    public void expiration() {
+        cityMgRepository.deleteByDateLessThan(Instant.now().getEpochSecond() - 1209600);
     }
 
     public void deleteDate(String city, String date) {

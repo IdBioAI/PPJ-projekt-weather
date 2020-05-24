@@ -1,5 +1,6 @@
 package com.weather.weather.services;
 
+import com.weather.weather.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,9 @@ import java.util.TimerTask;
 @ComponentScan(basePackages={"com.weather.weather.services"})
 public class UpdateWeatherService extends TimerTask {
 
+    @Autowired
+    OpenWeatherService openWeatherService;
+
     @Override
     public void run() {
         update();
@@ -17,9 +21,9 @@ public class UpdateWeatherService extends TimerTask {
 
     private void update() {
         try {
-            OpenWeatherService.update();
+            openWeatherService.update();
         } catch (Exception e) {
-            e.printStackTrace();
+            Main.getLog().error(e.getMessage());
         }
     }
 

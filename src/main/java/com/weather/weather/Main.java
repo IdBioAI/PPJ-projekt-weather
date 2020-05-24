@@ -15,7 +15,6 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-//@EnableWebMvc
 @SpringBootApplication
 //@EnableConfigurationProperties
 @ConfigurationPropertiesScan("com.weather.weather.configurations")

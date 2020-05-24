@@ -1,212 +1,537 @@
-2020-05-12 00:06:20.252 ERROR 25380 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Current request is not a multipart request] with root cause
-
-org.springframework.web.multipart.MultipartException: Current request is not a multipart request
-	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:196) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2020-05-12 00:07:41.495 ERROR 9340 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Current request is not a multipart request] with root cause
-
-org.springframework.web.multipart.MultipartException: Current request is not a multipart request
-	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:196) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2020-05-12 00:08:09.644 ERROR 25420 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Current request is not a multipart request] with root cause
-
-org.springframework.web.multipart.MultipartException: Current request is not a multipart request
-	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:196) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2020-05-12 00:09:42.910 ERROR 6596 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Current request is not a multipart request] with root cause
-
-org.springframework.web.multipart.MultipartException: Current request is not a multipart request
-	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:196) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
+2020-05-24 00:04:03.674  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:04:03.749  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:04:03.804  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:09:03.666  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:09:03.720  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:09:03.774  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:14:03.600  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:14:03.646  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:14:03.692  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:19:03.609  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:19:03.654  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:19:03.702  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:24:03.614  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:24:03.666  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:24:03.715  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:29:03.605  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:29:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:29:03.698  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:34:03.598  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:34:03.651  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:34:03.699  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:39:03.693  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:39:03.750  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:39:03.813  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:44:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:44:03.643  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:44:03.689  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:49:03.660  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:49:03.717  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:49:03.777  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:54:03.670  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:54:03.719  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:54:03.767  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 00:59:03.611  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 00:59:03.660  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 00:59:03.706  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:04:03.611  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:04:03.658  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:04:03.724  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:09:03.611  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:09:03.659  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:09:03.707  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:14:03.605  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:14:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:14:03.701  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:19:03.625  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:19:03.685  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:19:03.741  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:24:03.613  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:24:03.661  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:24:03.709  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:29:03.616  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:29:03.663  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:29:03.710  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:34:03.616  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:34:03.679  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:34:03.744  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:39:03.616  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:39:03.664  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:39:03.710  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:44:04.038  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:44:04.184  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:44:04.331  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:49:03.944  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:49:04.073  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:49:04.204  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:54:03.920  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:54:04.050  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:54:04.178  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 01:59:03.945  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 01:59:04.085  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 01:59:04.236  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:04:03.947  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:04:04.078  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:04:04.209  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:09:04.125  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:09:04.290  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:09:04.438  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:14:03.985  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:14:04.155  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:14:04.381  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:19:03.942  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:19:04.078  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:19:04.210  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:24:03.937  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:24:04.068  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:24:04.201  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:29:03.947  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:29:04.134  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:29:04.281  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:34:03.933  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:34:04.065  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:34:04.193  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:39:04.015  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:39:04.146  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:39:04.277  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:44:03.923  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:44:04.066  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:44:04.203  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:49:03.941  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:49:04.073  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:49:04.205  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:54:03.944  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:54:04.075  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:54:04.205  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 02:59:03.945  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 02:59:04.095  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 02:59:04.238  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:04:03.971  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:04:04.109  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:04:04.246  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:09:03.953  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:09:04.079  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:09:04.205  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:14:03.939  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:14:04.088  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:14:04.295  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:19:03.939  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:19:04.069  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:19:04.200  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:24:03.921  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:24:04.047  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:24:04.174  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:29:03.922  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:29:04.059  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:29:04.197  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:34:04.015  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:34:04.161  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:34:04.329  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:39:03.943  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:39:04.074  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:39:04.204  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:44:03.950  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:44:04.081  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:44:04.212  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 03:49:03.925  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:49:04.062  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:49:04.199 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 03:54:03.937  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:54:04.067  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:54:04.196 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 03:59:03.939  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 03:59:04.067  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 03:59:04.197 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 04:04:03.923  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:04:04.059  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:04:04.204 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 04:09:03.943  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:09:04.076  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:09:04.205 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 04:14:03.923  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:14:04.048  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:14:04.174 ERROR 29960 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 04:19:03.947  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:19:04.094  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:19:04.239  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:24:03.937  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:24:04.068  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:24:04.201  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:29:04.010  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:29:04.152  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:29:04.409  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:34:03.927  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:34:04.097  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:34:04.225  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:39:03.968  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:39:04.098  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:39:04.229  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:44:03.989  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:44:04.131  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:44:04.276  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:49:03.925  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:49:04.050  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:49:04.177  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:54:03.935  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:54:04.065  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:54:04.196  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 04:59:03.690  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 04:59:03.741  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 04:59:03.792  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:04:03.594  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:04:03.637  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:04:03.680  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:09:03.652  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:09:03.698  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:09:03.777  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:14:03.604  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:14:03.668  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:14:03.724  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:19:03.594  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:19:03.638  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:19:03.688  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:24:03.594  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:24:03.639  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:24:03.684  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:29:03.650  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:29:03.704  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:29:03.759  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:34:03.637  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:34:03.733  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:34:03.780  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:39:04.002  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:39:04.144  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:39:04.289  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:44:03.945  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:44:04.082  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:44:04.213  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:49:04.008  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:49:04.154  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:49:04.297  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:54:03.969  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:54:04.105  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:54:04.242  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 05:59:03.942  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 05:59:04.071  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 05:59:04.203  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:04:03.924  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:04:04.061  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:04:04.205  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:09:03.947  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:09:04.078  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:09:04.209  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:14:03.948  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:14:04.080  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:14:04.210  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:19:03.940  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:19:04.086  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:19:04.227  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:24:03.920  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:24:04.103  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:24:04.230  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:29:03.944  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:29:04.076  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:29:04.207  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:34:03.927  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:34:04.079  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:34:04.216  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:39:03.939  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:39:04.069  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:39:04.198  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:44:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:44:03.703  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:44:03.758  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:49:03.590  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:49:03.635  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:49:03.679  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:54:03.592  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:54:03.639  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:54:03.684  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 06:59:03.606  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 06:59:03.662  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 06:59:03.715  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:04:03.592  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:04:03.640  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:04:03.688  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:09:03.619  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:09:03.663  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:09:03.709  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:14:03.603  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:14:03.650  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:14:03.704  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:19:03.589  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:19:03.633  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:19:03.679  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:24:03.603  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:24:03.648  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:24:03.692  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:29:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:29:03.650  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:29:03.710  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:34:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:34:03.641  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:34:03.685  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:39:04.007  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:39:04.156  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:39:04.302  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:44:03.936  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:44:04.068  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:44:04.199  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:49:03.929  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:49:04.058  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:49:04.183  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:54:03.948  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:54:04.159  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:54:04.305  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 07:59:03.950  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 07:59:04.081  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 07:59:04.211  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:04:03.938  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:04:04.070  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:04:04.202  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:09:04.094  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:09:04.270  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:09:04.448  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:14:03.927  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:14:04.056  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:14:04.185  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:19:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:19:03.706  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:19:03.759  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:24:03.606  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:24:03.655  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:24:03.700  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:29:03.601  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:29:03.654  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:29:03.713  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:34:03.618  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:34:03.680  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:34:03.738  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:39:03.662  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:39:03.707  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:39:03.752  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:44:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:44:03.641  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:44:03.686  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:49:03.602  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:49:03.657  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:49:03.712  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:54:03.595  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:54:03.640  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:54:03.687  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 08:59:03.601  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 08:59:03.649  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 08:59:03.705  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:04:03.610  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:04:03.667  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:04:03.857  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:09:03.609  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:09:03.656  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:09:03.716  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:14:03.648  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:14:03.710  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:14:03.761  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:19:03.955  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:19:04.084  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:19:04.279  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:24:03.920  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:24:04.044  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:24:04.170  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:29:03.893  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:29:04.016  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:29:04.139  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:34:03.919  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:34:04.062  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:34:04.203  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:39:03.912  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:39:04.034  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:39:04.156  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:44:03.901  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:44:04.024  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:44:04.148  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:49:03.910  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:49:04.051  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:49:04.219  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:54:04.936  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:54:05.061  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:54:05.186  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 09:59:03.909  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 09:59:04.031  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 09:59:04.151  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:04:03.940  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:04:04.071  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:04:04.212  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:09:03.961  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:09:04.085  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:09:04.203  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:14:03.905  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:14:04.031  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:14:04.152  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:19:03.994  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:19:04.199  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:19:04.396  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:24:03.916  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:24:04.037  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:24:04.158  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:29:03.917  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:29:04.039  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:29:04.161  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:34:03.902  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:34:04.040  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:34:04.170  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:39:03.906  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:39:04.026  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:39:04.148  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:44:03.879  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:44:03.994  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:44:04.110  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:49:03.922  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:49:04.056  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:49:04.190  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:54:03.876  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:54:03.991  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:54:04.106  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 10:59:03.877  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 10:59:03.995  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 10:59:04.111  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:04:03.964  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:04:04.096  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:04:04.230  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:09:03.892  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:09:04.012  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:09:04.128  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:14:03.659  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:14:03.717  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:14:03.770  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:19:03.598  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:19:03.643  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:19:03.688  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:24:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:24:03.641  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:24:03.684  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:29:03.604  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:29:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:29:03.719  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:34:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:34:03.641  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:34:03.686  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:39:03.674  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:39:03.726  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:39:03.771  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:44:03.652  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:44:03.699  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:44:03.747  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:49:03.591  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:49:03.636  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:49:03.681  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:54:03.653  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:54:03.708  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:54:03.752  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 11:59:03.650  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 11:59:03.694  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 11:59:03.755  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:04:03.596  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:04:03.642  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:04:03.687  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:09:03.682  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:09:03.812  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:09:03.860  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:14:03.630  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:14:03.764  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:14:03.820  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:19:03.648  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:19:03.692  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:19:03.752  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:24:03.601  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:24:03.670  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:24:03.713  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:29:03.605  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:29:03.648  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:29:03.708  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:34:03.635  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:34:03.681  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:34:03.724  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:39:03.614  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:39:03.672  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:39:03.719  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:44:03.647  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:44:03.699  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:44:03.754  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:49:03.591  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:49:03.637  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:49:03.682  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:54:03.605  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:54:03.657  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:54:03.706  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 12:59:03.730  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 12:59:03.808  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 12:59:03.894  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:04:03.991  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:04:04.163  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:04:04.318  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:09:03.946  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:09:04.077  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:09:04.210  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:14:03.938  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:14:04.066  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:14:04.197  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:19:04.010  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:19:04.167  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:19:04.339  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:24:03.946  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:24:04.077  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:24:04.208  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:29:03.934  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:29:04.064  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:29:04.197  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:34:03.986  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-24 13:34:04.135  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-24 13:34:04.285  INFO 29960 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-24 13:38:02.493  INFO 29960 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-24 13:38:02.507  INFO 29960 --- [SpringContextShutdownHook] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:172}] to 127.0.0.1:27017 because the pool has been closed.
+2020-05-24 13:38:02.510  INFO 29960 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-24 13:38:02.521  INFO 29960 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-24 13:38:02.527  INFO 29960 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-24 22:11:30.052  INFO 24388 --- [main] com.weather.weather.Main                 : Starting Main on DESKTOP-77ATMCM with PID 24388 (P:\skola\weather\target\classes started by JaroslavPC in P:\skola\weather)
+2020-05-24 22:11:30.053  INFO 24388 --- [main] com.weather.weather.Main                 : The following profiles are active: dev
+2020-05-24 22:11:30.148  WARN 24388 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-24 22:11:30.483  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-24 22:11:30.483  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-24 22:11:30.507  INFO 24388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMgRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-05-24 22:11:30.523  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 3 JPA repository interfaces.
+2020-05-24 22:11:30.535  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-24 22:11:30.535  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-05-24 22:11:30.541  INFO 24388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMySQLRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-24 22:11:30.541  INFO 24388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.ConfigRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-24 22:11:30.541  INFO 24388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.StateRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-24 22:11:30.544  INFO 24388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2020-05-24 22:11:30.794  INFO 24388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-05-24 22:11:30.799  INFO 24388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-24 22:11:30.799  INFO 24388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-24 22:11:30.877  INFO 24388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-24 22:11:30.877  INFO 24388 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 785 ms
+2020-05-24 22:11:30.940  INFO 24388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-24 22:11:31.001  INFO 24388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-24 22:11:31.028  INFO 24388 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-24 22:11:31.061  INFO 24388 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-24 22:11:31.114  INFO 24388 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-24 22:11:31.162  INFO 24388 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: com.weather.weather.configurations.SQLiteDialect
+2020-05-24 22:11:31.428  INFO 24388 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-24 22:11:31.432  INFO 24388 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-24 22:11:31.543  INFO 24388 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-05-24 22:11:31.543  INFO 24388 --- [main] org.mongodb.driver.cluster               : Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-05-24 22:11:31.570  INFO 24388 --- [cluster-ClusterId{value='5ecad4f365eb004583ae9e66', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:322}] to 127.0.0.1:27017
+2020-05-24 22:11:31.572  INFO 24388 --- [cluster-ClusterId{value='5ecad4f365eb004583ae9e66', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 5]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1531300}
+2020-05-24 22:11:31.573  INFO 24388 --- [cluster-ClusterId{value='5ecad4f365eb004583ae9e66', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-05-24 22:11:31.798 ERROR 24388 --- [Timer-0] com.weather.weather.Main                 : null
+2020-05-24 22:11:31.819  WARN 24388 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-24 22:11:31.882  INFO 24388 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-24 22:11:31.999  INFO 24388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-05-24 22:11:32.001  INFO 24388 --- [main] com.weather.weather.Main                 : Started Main in 2.152 seconds (JVM running for 2.898)
+2020-05-24 22:11:35.686  INFO 24388 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-24 22:11:35.686  INFO 24388 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-24 22:11:35.691  INFO 24388 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-05-24 22:11:35.816  INFO 24388 --- [http-nio-8087-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:323}] to 127.0.0.1:27017
+2020-05-24 22:12:24.497  WARN 24388 --- [http-nio-8087-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 5, SQLState: null
+2020-05-24 22:12:24.497 ERROR 24388 --- [http-nio-8087-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : [SQLITE_BUSY]  The database file is locked (database is locked)
+2020-05-24 22:12:24.504 ERROR 24388 --- [http-nio-8087-exec-9] com.weather.weather.Main                 : could not extract ResultSet; nested exception is org.hibernate.exception.GenericJDBCException: could not extract ResultSet

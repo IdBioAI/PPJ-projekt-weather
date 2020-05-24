@@ -56,14 +56,13 @@ public class MainPage {
             t.merge(vc, sw);
             return sw.toString();
         }catch (Exception e){
-           // WeatherApplication.WriteToLog("Error mainPage: " + e.getMessage());
-            System.out.println("Error mainPage: " + e.getMessage());
+            Main.getLog().error(e.getMessage());
         }
        // return readAllBytesJava7("templates/index.html");
         return null;
     }
 
-    private void UnixTimeToDate(List<CityMySQL> cities) {
+    public void UnixTimeToDate(List<CityMySQL> cities) {
         Date date;
         SimpleDateFormat sdf;
         for(CityMySQL c : cities){
@@ -82,11 +81,12 @@ public class MainPage {
             long epoch = dt.getTime();
             return (epoch / 1000);
         } catch (Exception e) {
+            Main.getLog().error(e.getMessage());
             return 0;
         }
     }
 
-    private void calculateAverageTemp(List<CityMySQL> cities) {
+    public void calculateAverageTemp(List<CityMySQL> cities) {
         float avg = 0;
         int total = 0;
         for(CityMySQL c : cities){
@@ -101,17 +101,17 @@ public class MainPage {
         }
     }
 
-    private void findWeather(List<CityMySQL> cities, int week) {
+    public void findWeather(List<CityMySQL> cities, int week) {
         long epoch = 0;
         if(week == 0) {
             epoch = Instant.now().getEpochSecond() - 86400;
         }
         else if(week == 1) {
-            epoch = Instant.now().getEpochSecond() - 604800;
+            epoch = Instant.now().getEpochSecond() - 604801;
         }
 
         else if(week == 2) {
-            epoch = Instant.now().getEpochSecond() - 1209600;
+            epoch = Instant.now().getEpochSecond() - 1209601;
         }
 
         for(CityMySQL c : cities){

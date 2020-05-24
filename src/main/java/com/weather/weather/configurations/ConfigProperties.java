@@ -12,6 +12,7 @@ public class ConfigProperties {
     private boolean readOnly;
     private boolean importOnStartUp;
     private String Import;
+    private boolean update;
 
     public int getUpdateTime() {
         return updateTime;
@@ -43,5 +44,13 @@ public class ConfigProperties {
 
     public void setImport(String anImport) {
         Import = anImport;
+    }
+
+    public boolean isUpdate() {
+        return update;
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
     }
 }
