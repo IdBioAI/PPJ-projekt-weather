@@ -1,2 +1,4 @@
-# PPJ-projekt-weather
+# Spuštění
+
+## !!spustitelný soubor ve složce "executable"!!
  
