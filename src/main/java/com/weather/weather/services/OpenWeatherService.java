@@ -64,7 +64,9 @@ public class OpenWeatherService {
     public void update(){
         try{
 
-            if(configProperties.isUpdate()){ return; }
+            if(!configProperties.isUpdate()){
+                return;
+            }
 
             List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
             OWM owm = new OWM("82ca724eba719259cc2fa548dbe11898");
@@ -104,8 +106,9 @@ public class OpenWeatherService {
 
     public List<String> GetAllCountries(){
         List<String> c = new ArrayList<String>();
-        ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
-        File file = new File(classLoader.getResource("countries.json").getFile());
+        //ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
+        //File file = new File(classLoader.getResource("countries.json").getFile());
+        File file = new File("webFiles//countries.json");
         try {
 
             JSONArray jsonObject = new JSONArray (ReadFile(file.toString()));
@@ -132,8 +135,9 @@ public class OpenWeatherService {
 
     public List<String> GetAllCities(String country) {
         List<String> c = new ArrayList<String>();
-        ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
-        File file = new File(classLoader.getResource("countriesCities.json").getFile());
+        //ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
+        //File file = new File(classLoader.getResource("countriesCities.json").getFile());
+        File file = new File("webFiles//countriesCities.json");
         try {
 
             JSONObject jsonObject = new JSONObject (ReadFile(file.toString()));
