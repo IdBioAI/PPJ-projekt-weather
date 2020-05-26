@@ -73,6 +73,7 @@ public class OpenWeatherService {
             owm.setUnit(OWM.Unit.METRIC);
             CurrentWeather cwd;
             CityMg cityMg;
+            float tmp = 0, hum = -1, win = -1, deg = -1;
             for (CityMySQL city : cities) {
                 cwd = owm.currentWeatherByCityName(city.getCityName());
                 // System.out.println("City: " + cwd.getCityData().getName());
@@ -85,7 +86,17 @@ public class OpenWeatherService {
                 // printing the max./min. temperature
                 //System.out.println("Temperature: " + cwd.getMainData().getTempMax()
                 //                   + "/" + cwd.getMainData().getTempMin() + "\' C");
-                cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), cwd.getMainData().getTemp().floatValue(), cwd.getMainData().getHumidity().floatValue(), cwd.getWindData().getSpeed().floatValue(), cwd.getWindData().getDegree().floatValue());
+                if(cwd.getMainData().getTemp() != null)
+                    tmp = cwd.getMainData().getTemp().floatValue();
+                else return;
+                if(cwd.getMainData().getHumidity() != null)
+                    hum = cwd.getMainData().getHumidity().floatValue();
+                if(cwd.getWindData().getSpeed() != null)
+                    win = cwd.getWindData().getSpeed().floatValue();
+                if(cwd.getWindData().getDegree() != null)
+                    deg = cwd.getWindData().getDegree().floatValue();
+
+                cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), tmp, hum, win, deg);
                 Main.getMongoDBService().SaveData(cityMg);
                 Main.getLog().info(city.getCityName() + " update");
             }
