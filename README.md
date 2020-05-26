@@ -1,4 +1,4 @@
 # Spuštění
 
-##!!spustitelný soubor ve složce "executable"!!
+## !!spustitelný soubor ve složce "executable"!!
  
