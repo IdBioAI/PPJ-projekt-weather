@@ -1,0 +1,102 @@
+2020-05-27 00:03:37.563  INFO 29564 --- [main] com.weather.weather.Main                 : Starting Main v0.0.1-SNAPSHOT on DESKTOP-77ATMCM with PID 29564 (P:\skola\weather\target\weather-0.0.1-SNAPSHOT.jar started by JaroslavPC in P:\skola\weather\target)
+2020-05-27 00:03:37.568  INFO 29564 --- [main] com.weather.weather.Main                 : The following profiles are active: prod
+2020-05-27 00:03:37.702  WARN 29564 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 00:03:38.073  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-27 00:03:38.075  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-27 00:03:38.112  INFO 29564 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMgRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-05-27 00:03:38.135  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 3 JPA repository interfaces.
+2020-05-27 00:03:38.157  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-27 00:03:38.157  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-05-27 00:03:38.162  INFO 29564 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.StateRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:03:38.165  INFO 29564 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMySQLRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:03:38.167  INFO 29564 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.ConfigRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:03:38.171  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 1 MongoDB repository interfaces.
+2020-05-27 00:03:38.678  INFO 29564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-05-27 00:03:38.686  INFO 29564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 00:03:38.686  INFO 29564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 00:03:38.733  INFO 29564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 00:03:38.733  INFO 29564 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1122 ms
+2020-05-27 00:03:38.835  INFO 29564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 00:03:38.932  INFO 29564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 00:03:38.975  INFO 29564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-27 00:03:39.027  INFO 29564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-27 00:03:39.133  INFO 29564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-27 00:03:39.211  INFO 29564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: com.weather.weather.configurations.SQLiteDialect
+2020-05-27 00:03:39.615  INFO 29564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-27 00:03:39.621  INFO 29564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-27 00:03:39.814  INFO 29564 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-05-27 00:03:39.814  INFO 29564 --- [main] org.mongodb.driver.cluster               : Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-05-27 00:03:39.867  INFO 29564 --- [cluster-ClusterId{value='5ecd923b1dbb586e8edb3cac', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:49}] to 127.0.0.1:27017
+2020-05-27 00:03:39.873  INFO 29564 --- [cluster-ClusterId{value='5ecd923b1dbb586e8edb3cac', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 5]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3981400}
+2020-05-27 00:03:39.874  INFO 29564 --- [cluster-ClusterId{value='5ecd923b1dbb586e8edb3cac', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-05-27 00:03:40.229  WARN 29564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-27 00:03:40.318  INFO 29564 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 00:03:40.554  INFO 29564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-05-27 00:03:40.556  INFO 29564 --- [main] com.weather.weather.Main                 : Started Main in 3.307 seconds (JVM running for 3.635)
+2020-05-27 00:03:41.316  INFO 29564 --- [Timer-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:50}] to 127.0.0.1:27017
+2020-05-27 00:03:41.329  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:03:41.485  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:03:48.109  INFO 29564 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 00:03:48.110  INFO 29564 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 00:03:48.114  INFO 29564 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-05-27 00:03:48.211 ERROR 29564 --- [http-nio-8087-exec-1] com.weather.weather.Main                 : webFiles\countries.json
+2020-05-27 00:03:48.212 ERROR 29564 --- [http-nio-8087-exec-1] com.weather.weather.Main                 : End of input at character 0 of 
+2020-05-27 00:03:48.213 ERROR 29564 --- [http-nio-8087-exec-1] com.weather.weather.Main                 : webFiles\countriesCities.json
+2020-05-27 00:03:48.213 ERROR 29564 --- [http-nio-8087-exec-1] com.weather.weather.Main                 : End of input at character 0 of 
+2020-05-27 00:03:50.738  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:03:50.868  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:04:00.756  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:04:00.890  INFO 29564 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:05:23.849  INFO 15092 --- [main] com.weather.weather.Main                 : Starting Main v0.0.1-SNAPSHOT on DESKTOP-77ATMCM with PID 15092 (P:\skola\weather\target\weather-0.0.1-SNAPSHOT.jar started by JaroslavPC in P:\skola\weather\target)
+2020-05-27 00:05:23.850  INFO 15092 --- [main] com.weather.weather.Main                 : The following profiles are active: prod
+2020-05-27 00:05:23.976  WARN 15092 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 00:05:24.306  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-27 00:05:24.308  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-27 00:05:24.344  INFO 15092 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMgRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-05-27 00:05:24.359  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 3 JPA repository interfaces.
+2020-05-27 00:05:24.385  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-27 00:05:24.386  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-05-27 00:05:24.389  INFO 15092 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.StateRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:05:24.391  INFO 15092 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMySQLRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:05:24.392  INFO 15092 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.ConfigRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-05-27 00:05:24.395  INFO 15092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2020-05-27 00:05:24.898  INFO 15092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-05-27 00:05:24.905  INFO 15092 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 00:05:24.906  INFO 15092 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 00:05:24.948  INFO 15092 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 00:05:24.949  INFO 15092 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1060 ms
+2020-05-27 00:05:25.055  INFO 15092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 00:05:25.144  INFO 15092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 00:05:25.183  INFO 15092 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-27 00:05:25.235  INFO 15092 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-27 00:05:25.341  INFO 15092 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-27 00:05:25.413  INFO 15092 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: com.weather.weather.configurations.SQLiteDialect
+2020-05-27 00:05:25.815  INFO 15092 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-27 00:05:25.821  INFO 15092 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-27 00:05:26.001  INFO 15092 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-05-27 00:05:26.001  INFO 15092 --- [main] org.mongodb.driver.cluster               : Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-05-27 00:05:26.062  INFO 15092 --- [cluster-ClusterId{value='5ecd92a54bc65209ebf78781', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:51}] to 127.0.0.1:27017
+2020-05-27 00:05:26.067  INFO 15092 --- [cluster-ClusterId{value='5ecd92a54bc65209ebf78781', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 5]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2914400}
+2020-05-27 00:05:26.069  INFO 15092 --- [cluster-ClusterId{value='5ecd92a54bc65209ebf78781', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-05-27 00:05:26.460  WARN 15092 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-27 00:05:26.567  INFO 15092 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 00:05:26.813  INFO 15092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-05-27 00:05:26.816  INFO 15092 --- [main] com.weather.weather.Main                 : Started Main in 3.264 seconds (JVM running for 3.596)
+2020-05-27 00:05:27.527  INFO 15092 --- [Timer-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:52}] to 127.0.0.1:27017
+2020-05-27 00:05:27.536  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:05:27.677  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:05:30.792  INFO 15092 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 00:05:30.793  INFO 15092 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 00:05:30.797  INFO 15092 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-05-27 00:05:37.019  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:05:37.161  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:05:37.302  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-27 00:05:46.970  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:05:47.100  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:05:47.233  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-27 00:05:57.052  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:05:57.191  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:05:57.327  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Prague update
+2020-05-27 00:06:07.056  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Lednice update
+2020-05-27 00:06:07.197  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Zabcice update
+2020-05-27 00:06:07.335  INFO 15092 --- [Timer-0] com.weather.weather.Main                 : Prague update
