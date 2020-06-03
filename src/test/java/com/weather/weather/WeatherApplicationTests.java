@@ -6,6 +6,8 @@ import com.weather.weather.model.State;
 import com.weather.weather.rest.RestAPIControl;
 import com.weather.weather.rest.WebControl;
 import com.weather.weather.rest.modelJSON.CityData;
+import com.weather.weather.services.MongoDBService;
+import com.weather.weather.services.MySQLService;
 import com.weather.weather.view.MainPage;
 import net.aksingh.owmjapis.model.param.City;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -53,6 +55,10 @@ class WeatherApplicationTests {
     RestAPIControl restAPIControl;
     @Autowired
     MainPage mainPage;
+    @Autowired
+    MySQLService mySQLService;
+    @Autowired
+    MongoDBService mongoDBService;
 
     List<CityMySQL> listCityDay = new ArrayList<>();
     List<CityMySQL> listCityWeek = new ArrayList<>();
@@ -67,19 +73,19 @@ class WeatherApplicationTests {
         date = Instant.now().getEpochSecond();
 
         // příprava dat
-        Main.getMySQLService().deleteAll();
-        Main.getMongoDBService().deleteAll();
+        mySQLService.deleteAll();
+        mongoDBService.deleteAll();
 
-        Main.getMySQLService().ChangeState("Czech Republic");
-        Main.getMySQLService().AddCity("Prague");
+        mySQLService.ChangeState("Czech Republic");
+        mySQLService.AddCity("Prague");
 
         // příprava day test
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);
@@ -90,11 +96,11 @@ class WeatherApplicationTests {
         date -= 259200;
 
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);
@@ -105,11 +111,11 @@ class WeatherApplicationTests {
         date -= 604800;
 
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        Main.getMongoDBService().SaveData(c);
+        mongoDBService.SaveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);

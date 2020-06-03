@@ -1,35 +1,22 @@
 package com.weather.weather.rest;
 
 
-import com.opencsv.CSVWriter;
-import com.opencsv.bean.CsvToBean;
-import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.bean.StatefulBeanToCsv;
-import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.weather.weather.Main;
 import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.configurations.FileStorageProperties;
-import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
 import com.weather.weather.rest.modelJSON.CityData;
+import com.weather.weather.services.MongoDBService;
+import com.weather.weather.services.MySQLService;
 import com.weather.weather.view.MainPage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -41,55 +28,72 @@ public class RestAPIControl {
     ConfigProperties configProperties;
     @Autowired
     FileStorageProperties fileStorageProperties;
+    @Autowired
+    private MySQLService mySQLService;
+    @Autowired
+    private MongoDBService mongoDBService;
 
+    Logger log = LoggerFactory.getLogger(getClass());
 
     @GetMapping("api/day")
     public List<CityMySQL> GetStateInfo(HttpServletResponse response) {
+
+        List<CityMySQL> data = new ArrayList<>();
+
         try {
-            return GetData(0);
+            data = GetData(0);
+            return data;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
-        return null;
+
+        return data;
     }
 
     @GetMapping("api/week")
     public List<CityMySQL> getWeekInfo(HttpServletResponse response) {
+
+        List<CityMySQL> data = new ArrayList<>();
+
         try {
-            return GetData(1);
+            data =  GetData(1);
+            return data;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
-        return null;
+
+        return data;
     }
 
     @GetMapping("api/week2")
     public List<CityMySQL> getWeek2Info(HttpServletResponse response) {
+
+        List<CityMySQL> data = new ArrayList<>();
+
         try {
-            return GetData(2);
+            data =  GetData(2);
+            return data;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
-        return null;
+
+        return data;
     }
 
     @RequestMapping(value = "api/state/change/{state}", method = RequestMethod.PUT)
     public int UpdateState(@PathVariable("state")  String state) {
         if(configProperties.isReadOnly()){
-            //response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return 403;
         }
 
         try {
-            Main.getMySQLService().ChangeState(state);
-            //response.setStatus(HttpServletResponse.SC_ACCEPTED);
+            mySQLService.ChangeState(state);
             return 202;
         } catch (Exception e) {
-            Main.getLog().error(e.getMessage());
-            //response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+            log.error(e.getMessage());
             return 304;
         }
     }
@@ -102,10 +106,10 @@ public class RestAPIControl {
         }
 
         try{
-            Main.getMySQLService().AddCity(cityName);
+            mySQLService.AddCity(cityName);
             return 202;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             return 304;
         }
     }
@@ -118,11 +122,11 @@ public class RestAPIControl {
         }
 
         try {
-            Main.getMySQLService().DeleteCity(cityName);
-            Main.getMongoDBService().deleteCities(cityName);
+            mySQLService.DeleteCity(cityName);
+            mongoDBService.deleteCities(cityName);
             return 202;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             return 304;
         }
     }
@@ -141,16 +145,16 @@ public class RestAPIControl {
         }
 
         try {
-            Main.getMongoDBService().deleteDate(cityData.getName(), cityData.getDate());
+            mongoDBService.deleteDate(cityData.getName(), cityData.getDate());
             return 202;
         }catch (Exception e){
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
             return 304;
         }
     }
 
     private List<CityMySQL> GetData(int week){
-        List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
+        List<CityMySQL> cities = mySQLService.GetAllCities();
         mainPage.findWeather(cities, week);
         mainPage.calculateAverageTemp(cities);
         mainPage.UnixTimeToDate(cities);

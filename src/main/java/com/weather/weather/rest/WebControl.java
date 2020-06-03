@@ -5,13 +5,17 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
-import com.weather.weather.Main;
-import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.configurations.FileStorageProperties;
 import com.weather.weather.model.CityMg;
+import com.weather.weather.services.MongoDBService;
+import com.weather.weather.services.MySQLService;
+import com.weather.weather.services.OpenWeatherService;
 import com.weather.weather.view.MainPage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,42 +33,54 @@ public class WebControl {
 
     @Autowired
     MainPage mainPage;
-    ConfigProperties configProperties;
     @Autowired
     FileStorageProperties fileStorageProperties;
+    @Autowired
+    MySQLService mySQLService;
+    @Autowired
+    MongoDBService mongoDBService;
+    @Autowired
+    OpenWeatherService openWeatherService;
+
+    Logger log = LoggerFactory.getLogger(getClass());
 
     @GetMapping("/")
     public String GetStateInfo() {
-        return mainPage.ShowMainPage(0);
+        try {
+            return mainPage.ShowMainPage(0);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        return "Error";
     }
 
     @GetMapping("/week")
     public String getWeekInfo() {
-        return mainPage.ShowMainPage(1);
+        try {
+            return mainPage.ShowMainPage(1);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        return "Error";
     }
 
     @GetMapping("/week2")
     public String getWeek2Info() {
-        return mainPage.ShowMainPage(2);
+        try {
+            return mainPage.ShowMainPage(2);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        return "Error";
     }
 
     @PostMapping("/city/import")
     public void uploadFile(HttpServletResponse response, @RequestParam("file") MultipartFile file) {
-
-       /* if (file.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:uploadStatus";
-        }*/
-
         try {
 
-            // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
             Path path = Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename());
             Files.write(path, bytes);
-
-            /*redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "'");*/
 
             // import do databáze
             Reader reader = Files.newBufferedReader(Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename()));
@@ -77,13 +93,13 @@ public class WebControl {
 
             CityMg cityMg;
             while (csvUserIterator.hasNext()) {
-                Main.getMongoDBService().SaveData(csvUserIterator.next());
+                mongoDBService.SaveData(csvUserIterator.next());
             }
 
             response.sendRedirect("/");
 
         } catch (IOException e) {
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
         }
     }
 
@@ -91,6 +107,7 @@ public class WebControl {
     public void downloadFile(HttpServletRequest request, HttpServletResponse response, @PathVariable String filename) {
 
         String csvFile = filename + ".csv";
+
         try {
 
             response.setContentType("text/csv");
@@ -104,34 +121,11 @@ public class WebControl {
                     .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
                     .withOrderedResults(false)
                     .build();
-            writer.write(Main.getMongoDBService().SelectValuesByName(filename));
+            writer.write(mongoDBService.SelectValuesByName(filename));
 
         }catch (Exception ex){
-            Main.getLog().error(ex.getMessage());
+            log.error(ex.getMessage());
         }
-
-        /*try {
-            File file = new File(fileStorageProperties.getDownloadDir() + "/" + filename + ".csv");
-
-            //get the mimetype
-            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
-            if (mimeType == null) {
-                //unknown mimetype so set the mimetype to application/octet-stream
-                mimeType = "application/octet-stream";
-            }
-
-            response.setContentType(mimeType);
-            response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
-            response.setContentLength((int) file.length());
-
-            InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
-
-            FileCopyUtils.copy(inputStream, response.getOutputStream());
-
-        }catch (Exception ex){
-            // TODO vypsání do logu
-        }*/
-
     }
 
 }

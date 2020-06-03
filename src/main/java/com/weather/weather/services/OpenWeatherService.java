@@ -9,8 +9,12 @@ import com.weather.weather.model.ConfigRepository;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
 import net.aksingh.owmjapis.model.HourlyWeatherForecast;
+import org.hibernate.sql.Update;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,135 +40,108 @@ public class OpenWeatherService {
     ConfigRepository configRepository;
     @Autowired
     ConfigProperties configProperties;
+    @Autowired
+    MySQLService mySQLService;
+    @Autowired
+    MongoDBService mongoDBService;
+    @Autowired
+    UpdateWeatherService timerTask;
 
-    TimerTask timerTask;
+    Logger log = LoggerFactory.getLogger(getClass());
 
-    static int time = 0;
-
-  /*  @Autowired
-    JSONParser parser;*/
+    int time = 0;
+    float tmp = 0, hum = -1, win = -1, deg = -1;
+    List<CityMySQL> cities;
+    CurrentWeather cwd;
+    CityMg cityMg;
+    OWM owm;
 
     public OpenWeatherService(){
 
     }
 
     public void startUpdating(){
-        timerTask = new UpdateWeatherService();
-        //running timer task as daemon thread
         Timer timer = new Timer(true);
         timer.scheduleAtFixedRate(timerTask, 0, time*1000);
     }
 
     public void updateTime(){
-        //time = Integer.parseInt(configRepository.findByName("timeUpdate").getValue());
         time = configProperties.getUpdateTime();
         startUpdating();
     }
 
-    public void update(){
-        try{
+    public void update() throws Exception{
 
-            if(!configProperties.isUpdate()){
-                return;
-            }
-
-            List<CityMySQL> cities = Main.getMySQLService().GetAllCities();
-            OWM owm = new OWM("82ca724eba719259cc2fa548dbe11898");
-            owm.setUnit(OWM.Unit.METRIC);
-            CurrentWeather cwd;
-            CityMg cityMg;
-            float tmp = 0, hum = -1, win = -1, deg = -1;
-            for (CityMySQL city : cities) {
-                cwd = owm.currentWeatherByCityName(city.getCityName());
-                // System.out.println("City: " + cwd.getCityData().getName());
-                // System.out.println("City: " + cwd.get);
-                // System.out.println("City: " + cwd.getMessage());
-              //  System.out.println(CurrentWeather.toJson(cwd));
-	        /*CurrentWeather cwd = owm.currentWeatherByCityName("Varnsdorf", OWM.Country.CZECH_REPUBLIC);
-	        System.out.println("City: " + cwd.getCityName());*/
-
-                // printing the max./min. temperature
-                //System.out.println("Temperature: " + cwd.getMainData().getTempMax()
-                //                   + "/" + cwd.getMainData().getTempMin() + "\' C");
-                if(cwd.getMainData().getTemp() != null)
-                    tmp = cwd.getMainData().getTemp().floatValue();
-                else return;
-                if(cwd.getMainData().getHumidity() != null)
-                    hum = cwd.getMainData().getHumidity().floatValue();
-                if(cwd.getWindData().getSpeed() != null)
-                    win = cwd.getWindData().getSpeed().floatValue();
-                if(cwd.getWindData().getDegree() != null)
-                    deg = cwd.getWindData().getDegree().floatValue();
-
-                cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), tmp, hum, win, deg);
-                Main.getMongoDBService().SaveData(cityMg);
-                Main.getLog().info(city.getCityName() + " update");
-            }
-            Main.getMongoDBService().expiration();
-        }catch(Exception ex){
-            Main.getLog().error(ex.getMessage());
+        if(!configProperties.isUpdate()){
+            return;
         }
 
+        cities = mySQLService.GetAllCities();
+        tmp = 0;
+        hum = -1;
+        win = -1;
+        deg = -1;
+
+        for (CityMySQL city : cities) {
+
+            cwd = owm.currentWeatherByCityName(city.getCityName());
+
+            if(cwd.getMainData().getTemp() != null)
+                tmp = cwd.getMainData().getTemp().floatValue();
+            else return;
+            if(cwd.getMainData().getHumidity() != null)
+                hum = cwd.getMainData().getHumidity().floatValue();
+            if(cwd.getWindData().getSpeed() != null)
+                win = cwd.getWindData().getSpeed().floatValue();
+            if(cwd.getWindData().getDegree() != null)
+                deg = cwd.getWindData().getDegree().floatValue();
+
+            cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), tmp, hum, win, deg);
+            mongoDBService.SaveData(cityMg);
+            log.info(city.getCityName() + " update");
+
+        }
+
+        mongoDBService.expiration();
     }
 
 
     @PostConstruct
     public void Init() {
-      //  WeatherApplication.SetOpenWeatherService(openWeatherService);
-        Main.setOpenWeatherService(this);
+        owm = new OWM(configProperties.getApiKey());
+        owm.setUnit(OWM.Unit.METRIC);
         updateTime();
     }
 
-    public List<String> GetAllCountries(){
+    public List<String> GetAllCountries() throws Exception {
+
         List<String> c = new ArrayList<String>();
-        //ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
-        //File file = new File(classLoader.getResource("countries.json").getFile());
         File file = new File("webFiles//countries.json");
-        try {
 
-            JSONArray jsonObject = new JSONArray (ReadFile(file.toString()));
-            for (int i = 0; i < jsonObject.length(); i++) {
-                c.add((String) jsonObject.getJSONObject(i).get("name"));
-            }
-            return c;
-
-        } catch (Exception e) {
-            Main.getLog().error(e.getMessage());
+        JSONArray jsonObject = new JSONArray (ReadFile(file.toString()));
+        for (int i = 0; i < jsonObject.length(); i++) {
+            c.add((String) jsonObject.getJSONObject(i).get("name"));
         }
-        return null;
+
+        return c;
     }
 
-    private static String ReadFile(String filePath) {
-        StringBuilder contentBuilder = new StringBuilder();
-        try (Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8)) {
-            stream.forEach(s -> contentBuilder.append(s).append("\n"));
-        } catch (IOException e) {
-            Main.getLog().error(e.getMessage());
-        }
-        return contentBuilder.toString();
+    public String ReadFile(String filePath) throws Exception {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
     }
 
-    public List<String> GetAllCities(String country) {
-        List<String> c = new ArrayList<String>();
-        //ClassLoader classLoader = new OpenWeatherService().getClass().getClassLoader();
-        //File file = new File(classLoader.getResource("countriesCities.json").getFile());
+    public List<String> GetAllCities(String country) throws Exception{
+
+        List<String> c = new ArrayList<>();
         File file = new File("webFiles//countriesCities.json");
-        try {
 
-            JSONObject jsonObject = new JSONObject (ReadFile(file.toString()));
-           // JSONArray arrayCit = jsonObject.names();
-            JSONArray arrayCit = jsonObject.getJSONArray(country);
-            for (int i = 0; i < arrayCit.length(); i++) {
-                c.add((String) arrayCit.getString(i));
+        JSONObject jsonObject = new JSONObject (ReadFile(file.toString()));
+        JSONArray arrayCit = jsonObject.getJSONArray(country);
 
-            }
-
-            return c;
-            //return c;
-
-        } catch (Exception e) {
-            Main.getLog().error(e.getMessage());
+        for (int i = 0; i < arrayCit.length(); i++) {
+            c.add((String) arrayCit.getString(i));
         }
-        return null;
+
+        return c;
     }
 }

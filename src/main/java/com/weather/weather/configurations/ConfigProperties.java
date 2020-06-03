@@ -13,29 +13,22 @@ public class ConfigProperties {
     private boolean importOnStartUp;
     private String Import;
     private boolean update;
+    private String apiKey;
+
+    public String getApiKey() {
+        return apiKey;
+    }
 
     public int getUpdateTime() {
         return updateTime;
-    }
-
-    public void setUpdateTime(int updateTime) {
-        this.updateTime = updateTime;
     }
 
     public boolean isReadOnly() {
         return readOnly;
     }
 
-    public void setReadOnly(boolean readOnly) {
-        this.readOnly = readOnly;
-    }
-
     public boolean isImportOnStartUp() {
         return importOnStartUp;
-    }
-
-    public void setImportOnStartUp(boolean importOnStartUp) {
-        this.importOnStartUp = importOnStartUp;
     }
 
     public String getImport() {
@@ -50,7 +43,23 @@ public class ConfigProperties {
         return update;
     }
 
+    public void setUpdateTime(int updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public void setReadOnly(boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    public void setImportOnStartUp(boolean importOnStartUp) {
+        this.importOnStartUp = importOnStartUp;
+    }
+
     public void setUpdate(boolean update) {
         this.update = update;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 }

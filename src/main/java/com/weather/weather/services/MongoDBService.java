@@ -3,6 +3,8 @@ package com.weather.weather.services;
 import com.weather.weather.Main;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMgRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -21,10 +23,6 @@ public class MongoDBService {
 
     @PostConstruct
     public void Init(){
-        Main.setMongoDBService(this);
-        //System.out.println("Vytvarim....");
-        //CityMg c = new CityMg("Varnsdorf", "2020-04-13 06:00:00", 10.45f, 75.2f, 3.11f, 292.2f);
-        //cityMgRepository.save(c);
     }
 
     public void deleteAll(){
@@ -32,26 +30,14 @@ public class MongoDBService {
     }
 
     public List<CityMg> SelectValues(String name, long week){
-        List<CityMg> values = null;
-        try {
-            values = new ArrayList<CityMg>();
-            cityMgRepository.findByNameAndDateGreaterThan(name, week).forEach(values::add);
-        }catch (Exception e){
-            Main.getLog().error(e.getMessage());
-            return null;
-        }
+        List<CityMg> values = new ArrayList<>();
+        cityMgRepository.findByNameAndDateGreaterThan(name, week).forEach(values::add);
         return values;
     }
 
     public List<CityMg> SelectValuesByName(String name){
-        List<CityMg> values = null;
-        try {
-            values = new ArrayList<CityMg>();
-            cityMgRepository.findByName(name).forEach(values::add);
-        }catch (Exception e){
-            Main.getLog().error(e.getMessage());
-            return null;
-        }
+        List<CityMg> values = new ArrayList<>();
+        cityMgRepository.findByName(name).forEach(values::add);
         return values;
     }
 

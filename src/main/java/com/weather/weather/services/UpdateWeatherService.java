@@ -2,15 +2,23 @@ package com.weather.weather.services;
 
 import com.weather.weather.Main;
 import org.aspectj.apache.bcel.classfile.Module;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.TimerTask;
 
 @Service
 @ComponentScan(basePackages={"com.weather.weather.services"})
 public class UpdateWeatherService extends TimerTask {
+
+    @Autowired
+    OpenWeatherService openWeatherService;
+
+    Logger log = LoggerFactory.getLogger(getClass());
 
     @Override
     public void run() {
@@ -19,9 +27,9 @@ public class UpdateWeatherService extends TimerTask {
 
     private void update() {
         try {
-            Main.getOpenWeatherService().openWeatherService.update();
+            openWeatherService.openWeatherService.update();
         } catch (Exception e) {
-            Main.getLog().error(e.getMessage());
+            log.error(e.getMessage());
         }
     }
 
