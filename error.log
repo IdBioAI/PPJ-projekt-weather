@@ -534,3 +534,203 @@
 2020-06-04 12:54:11.959  INFO 28900 --- [Timer-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
 2020-06-04 12:54:11.960 ERROR 28900 --- [Timer-0] c.w.w.services.UpdateWeatherService      : Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
 2020-06-04 12:54:11.963 ERROR 28900 --- [Timer-0] c.w.w.services.UpdateWeatherService      : Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+2020-06-04 13:08:02.300  INFO 21460 --- [main] com.weather.weather.Main                 : Starting Main on DESKTOP-77ATMCM with PID 21460 (P:\skola\weather\target\classes started by JaroslavPC in P:\skola\weather)
+2020-06-04 13:08:02.300  INFO 21460 --- [main] com.weather.weather.Main                 : The following profiles are active: dev
+2020-06-04 13:08:02.383  WARN 21460 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-06-04 13:08:02.689  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-04 13:08:02.690  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-04 13:08:02.726  INFO 21460 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMgRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-06-04 13:08:02.746  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 3 JPA repository interfaces.
+2020-06-04 13:08:02.759  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-04 13:08:02.760  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-06-04 13:08:02.765  INFO 21460 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMySQLRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-04 13:08:02.765  INFO 21460 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.ConfigRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-04 13:08:02.766  INFO 21460 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.StateRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-04 13:08:02.768  INFO 21460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2020-06-04 13:08:03.030  INFO 21460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-06-04 13:08:03.034  INFO 21460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-04 13:08:03.035  INFO 21460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-04 13:08:03.108  INFO 21460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-04 13:08:03.108  INFO 21460 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 782 ms
+2020-06-04 13:08:03.169  INFO 21460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-04 13:08:03.235  INFO 21460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-04 13:08:03.281  INFO 21460 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-04 13:08:03.329  INFO 21460 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-04 13:08:03.396  INFO 21460 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-04 13:08:03.447  INFO 21460 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: com.weather.weather.configurations.SQLiteDialect
+2020-06-04 13:08:03.730  INFO 21460 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-04 13:08:03.733  INFO 21460 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-04 13:08:03.941  INFO 21460 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-06-04 13:08:03.941  INFO 21460 --- [main] org.mongodb.driver.cluster               : Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-06-04 13:08:03.972  INFO 21460 --- [cluster-ClusterId{value='5ed8d6138d31896fd3dabdc7', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:89}] to 127.0.0.1:27017
+2020-06-04 13:08:03.974  INFO 21460 --- [cluster-ClusterId{value='5ed8d6138d31896fd3dabdc7', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 5]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1620600}
+2020-06-04 13:08:03.975  INFO 21460 --- [cluster-ClusterId{value='5ed8d6138d31896fd3dabdc7', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-06-04 13:08:04.155  WARN 21460 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-04 13:08:04.220  INFO 21460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-04 13:08:04.354  INFO 21460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-06-04 13:08:04.356  INFO 21460 --- [main] com.weather.weather.Main                 : Started Main in 2.259 seconds (JVM running for 3.02)
+2020-06-04 13:08:05.021  INFO 21460 --- [Timer-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:90}] to 127.0.0.1:27017
+2020-06-04 13:08:05.030  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:09.218  INFO 21460 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-04 13:08:09.219  INFO 21460 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-04 13:08:09.223  INFO 21460 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-06-04 13:08:09.899  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:14.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:19.623  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:24.654  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:29.657  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:34.683  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:39.625  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:44.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:49.728  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:54.671  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:08:59.632  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:04.629  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:09.653  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:14.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:19.630  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:24.639  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:29.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:34.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:39.621  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:44.666  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:49.665  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:54.879  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:09:59.639  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:04.984  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:09.671  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:14.782  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:19.827  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:24.782  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:29.887  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:34.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:39.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:44.623  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:49.651  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:54.624  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:10:59.655  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:04.629  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:09.631  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:14.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:19.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:24.611  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:29.619  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:34.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:39.621  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:44.964  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:49.621  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:54.640  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:11:59.665  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:04.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:09.623  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:14.641  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:19.614  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:24.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:29.624  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:34.643  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:39.621  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:44.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:49.631  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:54.647  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:12:59.696  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:04.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:09.701  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:14.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:19.653  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:24.628  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:29.934  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:34.636  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:39.640  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:44.638  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:49.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:54.613  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:13:59.662  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:04.624  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:09.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:14.619  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:19.624  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:24.641  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:29.636  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:34.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:39.662  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:44.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:49.665  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:54.639  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:14:59.846  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:04.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:09.633  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:14.699  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:19.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:24.623  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:29.648  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:34.846  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:39.651  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:44.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:49.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:54.619  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:15:59.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:04.623  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:09.610  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:14.628  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:19.651  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:24.644  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:29.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:34.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:39.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:44.611  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:49.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:54.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:16:59.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:04.625  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:09.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:14.628  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:19.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:24.613  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:29.613  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:34.611  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:39.633  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:44.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:49.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:54.633  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:17:59.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:04.612  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:09.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:14.669  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:19.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:24.609  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:29.628  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:34.610  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:39.641  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:44.634  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:49.612  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:54.618  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:18:59.619  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:05.643  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:09.616  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:14.683  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:19.650  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:24.658  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:29.612  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:34.636  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:39.674  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:44.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:49.651  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:54.631  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:19:59.685  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:04.660  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:09.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:14.646  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:19.629  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:24.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:30.690  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:34.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:39.647  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:44.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:49.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:54.693  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:20:59.614  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:21:04.617  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:21:09.622  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:21:14.626  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:21:19.615  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-04 13:21:24.620  INFO 21460 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update

@@ -42,11 +42,6 @@ public class OpenWeatherService {
     Logger log = LoggerFactory.getLogger(getClass());
 
     int time = 0;
-    float tmp = 0, hum = -1, win = -1, deg = -1;
-    List<CityMySQL> cities;
-    CurrentWeather cwd;
-    CityMg cityMg;
-    OWM owm;
 
     public OpenWeatherService(){
 
@@ -68,15 +63,17 @@ public class OpenWeatherService {
             return;
         }
 
-        cities = mySQLService.getAllCities();
-        tmp = 0;
-        hum = -1;
-        win = -1;
-        deg = -1;
+        List<CityMySQL> cities = mySQLService.getAllCities();
+        float tmp = 0;
+        float hum = -1;
+        float win = -1;
+        float deg = -1;
 
         for (CityMySQL city : cities) {
 
-            cwd = owm.currentWeatherByCityName(city.getCityName());
+            OWM owm = new OWM(configProperties.getApiKey());
+            owm.setUnit(OWM.Unit.METRIC);
+            CurrentWeather cwd = owm.currentWeatherByCityName(city.getCityName());
 
             if(cwd.getMainData().getTemp() != null)
                 tmp = cwd.getMainData().getTemp().floatValue();
@@ -88,7 +85,7 @@ public class OpenWeatherService {
             if(cwd.getWindData().getDegree() != null)
                 deg = cwd.getWindData().getDegree().floatValue();
 
-            cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), tmp, hum, win, deg);
+            CityMg cityMg = new CityMg(city.getCityName(), Instant.now().getEpochSecond(), tmp, hum, win, deg);
             mongoDBService.saveData(cityMg);
             log.info(city.getCityName() + " update");
 
@@ -100,8 +97,6 @@ public class OpenWeatherService {
 
     @PostConstruct
     public void init() {
-        owm = new OWM(configProperties.getApiKey());
-        owm.setUnit(OWM.Unit.METRIC);
         updateTime();
     }
 
