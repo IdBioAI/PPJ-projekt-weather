@@ -29,19 +29,19 @@ public class MongoDBService {
         cityMgRepository.deleteAll();
     }
 
-    public List<CityMg> SelectValues(String name, long week){
+    public List<CityMg> selectValues(String name, long week){
         List<CityMg> values = new ArrayList<>();
         cityMgRepository.findByNameAndDateGreaterThan(name, week).forEach(values::add);
         return values;
     }
 
-    public List<CityMg> SelectValuesByName(String name){
+    public List<CityMg> selectValuesByName(String name){
         List<CityMg> values = new ArrayList<>();
         cityMgRepository.findByName(name).forEach(values::add);
         return values;
     }
 
-    public void SaveData(CityMg cityMg){
+    public void saveData(CityMg cityMg){
         cityMgRepository.save(cityMg);
     }
 

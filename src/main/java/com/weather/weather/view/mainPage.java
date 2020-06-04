@@ -1,7 +1,6 @@
 package com.weather.weather.view;
 
 
-import com.weather.weather.Main;
 import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
@@ -13,8 +12,6 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -42,23 +39,23 @@ public class MainPage {
     VelocityContext vc;
 
     @PostConstruct
-    public void Init() {
+    public void init() {
         ve = new VelocityEngine();
         ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
         ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
         ve.init();
     }
 
-    public String ShowMainPage(int week) throws Exception {
+    public String showMainPage(int week) throws Exception {
 
-        String stateName = mySQLService.GetState().get(0).getStateName();
+        String stateName = mySQLService.getState().get(0).getStateName();
         //List<CityMg> cities = Main.getMongoDBService().SelectValues();
-        List<CityMySQL> cities = mySQLService.GetAllCities();
+        List<CityMySQL> cities = mySQLService.getAllCities();
         findWeather(cities, week);
         calculateAverageTemp(cities);
-        UnixTimeToDate(cities);
-        List<String> states = openWeatherService.GetAllCountries();
-        List<String> citesOfState = openWeatherService.GetAllCities(stateName);
+        unixTimeToDate(cities);
+        List<String> states = openWeatherService.getAllCountries();
+        List<String> citesOfState = openWeatherService.getAllCities(stateName);
         t = ve.getTemplate("templates/index.vn", "UTF-8");
 
         vc = new VelocityContext();
@@ -74,7 +71,7 @@ public class MainPage {
 
     }
 
-    public void UnixTimeToDate(List<CityMySQL> cities) {
+    public void unixTimeToDate(List<CityMySQL> cities) {
 
         Date date;
         SimpleDateFormat sdf;
@@ -88,7 +85,7 @@ public class MainPage {
         }
     }
 
-    public long TimeToUnix(String timestamp) throws Exception{
+    public long timeToUnix(String timestamp) throws Exception{
 
         long epoch;
 
@@ -131,7 +128,7 @@ public class MainPage {
         }
 
         for(CityMySQL c : cities){
-            c.setCities(mongoDBService.SelectValues(c.getCityName(), epoch));
+            c.setCities(mongoDBService.selectValues(c.getCityName(), epoch));
         }
     }
 

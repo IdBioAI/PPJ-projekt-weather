@@ -2,34 +2,18 @@ package com.weather.weather;
 
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
-import com.weather.weather.model.State;
 import com.weather.weather.rest.RestAPIControl;
-import com.weather.weather.rest.WebControl;
 import com.weather.weather.rest.modelJSON.CityData;
 import com.weather.weather.services.MongoDBService;
 import com.weather.weather.services.MySQLService;
 import com.weather.weather.view.MainPage;
-import net.aksingh.owmjapis.model.param.City;
-import org.apache.commons.lang.builder.EqualsBuilder;
 import org.junit.Assert;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.Before;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletResponse;
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -39,14 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static com.shazam.shazamcrest.matcher.Matchers.sameBeanAs;
-import static java.util.EnumSet.allOf;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class WeatherApplicationTests {
@@ -76,51 +56,51 @@ class WeatherApplicationTests {
         mySQLService.deleteAll();
         mongoDBService.deleteAll();
 
-        mySQLService.ChangeState("Czech Republic");
-        mySQLService.AddCity("Prague");
+        mySQLService.changeState("Czech Republic");
+        mySQLService.addCity("Prague");
 
         // příprava day test
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);
         listCityDay.add(cityMySQL);
-        mainPage.UnixTimeToDate(listCityDay);
+        mainPage.unixTimeToDate(listCityDay);
 
         // příprava week test
         date -= 259200;
 
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);
         listCityWeek.add(cityMySQL);
-        mainPage.UnixTimeToDate(listCityWeek);
+        mainPage.unixTimeToDate(listCityWeek);
 
         // příprava week2 test
         date -= 604800;
 
         c = new CityMg("Prague", date, 23.5f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         c = new CityMg("Prague", date, 22.9f, 48f, 3.6f, 30f);
-        mongoDBService.SaveData(c);
+        mongoDBService.saveData(c);
         list.add(c);
 
         cityMySQL = new CityMySQL("Prague", list, 23.2f);
         listCityWeek2.add(cityMySQL);
-        mainPage.UnixTimeToDate(listCityWeek2);
+        mainPage.unixTimeToDate(listCityWeek2);
 
     }
 
@@ -166,22 +146,22 @@ class WeatherApplicationTests {
     @Test
     @Order(4)
     public void updateStateTest() throws Exception{
-        int status = restAPIControl.UpdateState("Germany");
+        int status = restAPIControl.updateState("Germany");
         Assert.assertEquals(202, status);
     }
 
     @Test
     @Order(5)
     public void addDeleteTest() throws Exception{
-        Assert.assertEquals(202, restAPIControl.AddCity("Varnsdorf"));
-        Assert.assertEquals(202, restAPIControl.DeleteCity("Varnsdorf"));
+        Assert.assertEquals(202, restAPIControl.addCity("Varnsdorf"));
+        Assert.assertEquals(202, restAPIControl.deleteCity("Varnsdorf"));
     }
 
     @Test
     @Order(6)
     public void deleteTest() throws Exception{
         CityData cityData = new CityData("Prague", String.valueOf(date));
-        Assert.assertEquals(202, restAPIControl.DeleteTemp(cityData));
+        Assert.assertEquals(202, restAPIControl.deleteTemp(cityData));
         List<CityMySQL> res = restAPIControl.getWeek2Info(null);
 
         assertEquals(true, haveSamePropertyValues(CityMg.class, res.get(0).getCities().get(0), listCityWeek.get(0).getCities().get(0)));

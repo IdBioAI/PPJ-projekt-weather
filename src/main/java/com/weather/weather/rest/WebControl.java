@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -45,9 +44,9 @@ public class WebControl {
     Logger log = LoggerFactory.getLogger(getClass());
 
     @GetMapping("/")
-    public String GetStateInfo() {
+    public String getStateInfo() {
         try {
-            return mainPage.ShowMainPage(0);
+            return mainPage.showMainPage(0);
         } catch (Exception e) {
             log.error(e.getMessage());
         }
@@ -57,7 +56,7 @@ public class WebControl {
     @GetMapping("/week")
     public String getWeekInfo() {
         try {
-            return mainPage.ShowMainPage(1);
+            return mainPage.showMainPage(1);
         } catch (Exception e) {
             log.error(e.getMessage());
         }
@@ -67,7 +66,7 @@ public class WebControl {
     @GetMapping("/week2")
     public String getWeek2Info() {
         try {
-            return mainPage.ShowMainPage(2);
+            return mainPage.showMainPage(2);
         } catch (Exception e) {
             log.error(e.getMessage());
         }
@@ -93,7 +92,7 @@ public class WebControl {
 
             CityMg cityMg;
             while (csvUserIterator.hasNext()) {
-                mongoDBService.SaveData(csvUserIterator.next());
+                mongoDBService.saveData(csvUserIterator.next());
             }
 
             response.sendRedirect("/");
@@ -121,7 +120,7 @@ public class WebControl {
                     .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
                     .withOrderedResults(false)
                     .build();
-            writer.write(mongoDBService.SelectValuesByName(filename));
+            writer.write(mongoDBService.selectValuesByName(filename));
 
         }catch (Exception ex){
             log.error(ex.getMessage());

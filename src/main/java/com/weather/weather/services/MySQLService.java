@@ -31,7 +31,7 @@ public class MySQLService {
         cityMySQLRepository.deleteAll();
     }
 
-   public List<State> GetState(){
+   public List<State> getState(){
        List<State> s = new ArrayList<>();
        for(State p : stateRepository.findAll()){
            s.add(p);
@@ -39,7 +39,7 @@ public class MySQLService {
         return s;
    }
 
-    public List<CityMySQL> GetAllCities(){
+    public List<CityMySQL> getAllCities(){
         List<CityMySQL> s = new ArrayList<>();
         for(CityMySQL p : cityMySQLRepository.findAll()){
             s.add(p);
@@ -47,17 +47,17 @@ public class MySQLService {
         return s;
     }
 
-   public void ChangeState(String name){
+   public void changeState(String name){
         State s = new State(1, name);
         stateRepository.save(s);
    }
 
-   public void AddCity(String city){
+   public void addCity(String city){
        CityMySQL c = new CityMySQL(city);
        cityMySQLRepository.save(c);
    }
 
-    public void DeleteCity(String city) {
+    public void deleteCity(String city) {
         CityMySQL c = new CityMySQL(city);
         cityMySQLRepository.delete(c);
     }

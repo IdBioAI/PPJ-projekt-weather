@@ -1,7 +1,6 @@
 package com.weather.weather.rest;
 
 
-import com.weather.weather.Main;
 import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.configurations.FileStorageProperties;
 import com.weather.weather.model.CityMySQL;
@@ -36,12 +35,12 @@ public class RestAPIControl {
     Logger log = LoggerFactory.getLogger(getClass());
 
     @GetMapping("api/day")
-    public List<CityMySQL> GetStateInfo(HttpServletResponse response) {
+    public List<CityMySQL> getStateInfo(HttpServletResponse response) {
 
         List<CityMySQL> data = new ArrayList<>();
 
         try {
-            data = GetData(0);
+            data = getData(0);
             return data;
         }catch (Exception e){
             log.error(e.getMessage());
@@ -57,7 +56,7 @@ public class RestAPIControl {
         List<CityMySQL> data = new ArrayList<>();
 
         try {
-            data =  GetData(1);
+            data =  getData(1);
             return data;
         }catch (Exception e){
             log.error(e.getMessage());
@@ -73,7 +72,7 @@ public class RestAPIControl {
         List<CityMySQL> data = new ArrayList<>();
 
         try {
-            data =  GetData(2);
+            data =  getData(2);
             return data;
         }catch (Exception e){
             log.error(e.getMessage());
@@ -84,13 +83,13 @@ public class RestAPIControl {
     }
 
     @RequestMapping(value = "api/state/change/{state}", method = RequestMethod.PUT)
-    public int UpdateState(@PathVariable("state")  String state) {
+    public int updateState(@PathVariable("state")  String state) {
         if(configProperties.isReadOnly()){
             return 403;
         }
 
         try {
-            mySQLService.ChangeState(state);
+            mySQLService.changeState(state);
             return 202;
         } catch (Exception e) {
             log.error(e.getMessage());
@@ -99,14 +98,14 @@ public class RestAPIControl {
     }
 
     @RequestMapping(value = "api/city/add/{city}", method = RequestMethod.POST)
-    public int AddCity(@PathVariable("city") String cityName) {
+    public int addCity(@PathVariable("city") String cityName) {
 
         if(configProperties.isReadOnly()){
             return 403;
         }
 
         try{
-            mySQLService.AddCity(cityName);
+            mySQLService.addCity(cityName);
             return 202;
         }catch (Exception e){
             log.error(e.getMessage());
@@ -115,14 +114,14 @@ public class RestAPIControl {
     }
 
     @RequestMapping(value = "api/city/delete/{city}", method = RequestMethod.DELETE)
-    public int DeleteCity(@PathVariable("city")  String cityName) {
+    public int deleteCity(@PathVariable("city")  String cityName) {
 
         if(configProperties.isReadOnly()){
             return 403;
         }
 
         try {
-            mySQLService.DeleteCity(cityName);
+            mySQLService.deleteCity(cityName);
             mongoDBService.deleteCities(cityName);
             return 202;
         }catch (Exception e){
@@ -138,7 +137,7 @@ public class RestAPIControl {
      * @param date
      */
     @RequestMapping(value = "api/temp/delete", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public int DeleteTemp(@RequestBody CityData cityData) {
+    public int deleteTemp(@RequestBody CityData cityData) {
 
         if(configProperties.isReadOnly()){
             return 403;
@@ -153,11 +152,11 @@ public class RestAPIControl {
         }
     }
 
-    private List<CityMySQL> GetData(int week){
-        List<CityMySQL> cities = mySQLService.GetAllCities();
+    private List<CityMySQL> getData(int week){
+        List<CityMySQL> cities = mySQLService.getAllCities();
         mainPage.findWeather(cities, week);
         mainPage.calculateAverageTemp(cities);
-        mainPage.UnixTimeToDate(cities);
+        mainPage.unixTimeToDate(cities);
         return cities;
     }
 
