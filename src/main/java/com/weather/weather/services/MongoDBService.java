@@ -1,6 +1,7 @@
 package com.weather.weather.services;
 
 import com.weather.weather.Main;
+import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMgRepository;
 import org.slf4j.Logger;
@@ -20,6 +21,8 @@ public class MongoDBService {
 
     @Autowired
     CityMgRepository cityMgRepository;
+    @Autowired
+    ConfigProperties configProperties;
 
     @PostConstruct
     public void Init(){
@@ -50,7 +53,7 @@ public class MongoDBService {
     }
 
     public void expiration() {
-        cityMgRepository.deleteByDateLessThan(Instant.now().getEpochSecond() - 1209600);
+        cityMgRepository.deleteByDateLessThan(Instant.now().getEpochSecond() - (configProperties.getExpirationTime() * 24 * 60 * 60));
     }
 
     public void deleteDate(String city, String date) {

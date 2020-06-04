@@ -7,6 +7,7 @@ import com.weather.weather.model.ConfigRepository;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -104,33 +105,60 @@ public class OpenWeatherService {
         updateTime();
     }
 
-    public List<String> getAllCountries() throws Exception {
-
-        List<String> c = new ArrayList<String>();
-        File file = new File("webFiles//countries.json");
-
-        JSONArray jsonObject = new JSONArray (readFile(file.toString()));
-        for (int i = 0; i < jsonObject.length(); i++) {
-            c.add((String) jsonObject.getJSONObject(i).get("name"));
+    public boolean checkJSONArray(String test) {
+        try {
+            new JSONArray(test);
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
+            return false;
         }
+        return true;
+    }
 
-        return c;
+    public boolean checkJSONObject(String test) {
+        try {
+            new JSONObject(test);
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
+            return false;
+        }
+        return true;
     }
 
     public String readFile(String filePath) throws Exception {
         return new String(Files.readAllBytes(Paths.get(filePath)));
     }
 
+    public List<String> getAllCountries() throws Exception {
+
+        List<String> c = new ArrayList<>();
+        File file = new File("webFiles//countries.json");
+        String json = readFile(file.toString());
+
+        if(checkJSONArray(json)) {
+
+            JSONArray jsonObject = new JSONArray(json);
+            for (int i = 0; i < jsonObject.length(); i++) {
+                c.add((String) jsonObject.getJSONObject(i).get("name"));
+            }
+        }
+
+        return c;
+    }
+
     public List<String> getAllCities(String country) throws Exception{
 
         List<String> c = new ArrayList<>();
         File file = new File("webFiles//countriesCities.json");
+        String json = readFile(file.toString());
 
-        JSONObject jsonObject = new JSONObject (readFile(file.toString()));
-        JSONArray arrayCit = jsonObject.getJSONArray(country);
+        if(checkJSONObject(json)) {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray arrayCit = jsonObject.getJSONArray(country);
 
-        for (int i = 0; i < arrayCit.length(); i++) {
-            c.add((String) arrayCit.getString(i));
+            for (int i = 0; i < arrayCit.length(); i++) {
+                c.add(arrayCit.getString(i));
+            }
         }
 
         return c;

@@ -14,6 +14,15 @@ public class ConfigProperties {
     private String Import;
     private boolean update;
     private String apiKey;
+    private int expirationTime;
+
+    public int getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(int expirationTime) {
+        this.expirationTime = expirationTime;
+    }
 
     public String getApiKey() {
         return apiKey;
