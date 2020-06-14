@@ -1,15 +1,14 @@
 package com.weather.weather;
 
+import com.weather.weather.model.CityData;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
 import com.weather.weather.rest.RestAPIControl;
-import com.weather.weather.rest.modelJSON.CityData;
 import com.weather.weather.services.MongoDBService;
 import com.weather.weather.services.MySQLService;
 import com.weather.weather.view.MainPage;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,9 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static org.hamcrest.Matchers.hasProperty;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -105,7 +101,6 @@ class WeatherApplicationTests {
     }
 
     @Test
-    @Order(1)
     public void dayTest() throws Exception {
 
         List<CityMySQL> res = restAPIControl.getWeekInfo(null);
@@ -118,7 +113,6 @@ class WeatherApplicationTests {
     }
 
     @Test
-    @Order(2)
     public void weekTest() throws Exception {
 
         // TEST
@@ -131,7 +125,6 @@ class WeatherApplicationTests {
     }
 
     @Test
-    @Order(3)
     public void week2Test() throws Exception {
 
         // TEST
@@ -144,21 +137,18 @@ class WeatherApplicationTests {
     }
 
     @Test
-    @Order(4)
     public void updateStateTest() throws Exception{
         int status = restAPIControl.updateState("Germany");
         Assert.assertEquals(202, status);
     }
 
     @Test
-    @Order(5)
     public void addDeleteTest() throws Exception{
         Assert.assertEquals(202, restAPIControl.addCity("Varnsdorf"));
         Assert.assertEquals(202, restAPIControl.deleteCity("Varnsdorf"));
     }
 
     @Test
-    @Order(6)
     public void deleteTest() throws Exception{
         CityData cityData = new CityData("Prague", String.valueOf(date));
         Assert.assertEquals(202, restAPIControl.deleteTemp(cityData));

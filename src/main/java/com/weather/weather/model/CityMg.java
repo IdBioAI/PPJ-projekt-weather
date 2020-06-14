@@ -11,7 +11,7 @@ public class CityMg {
     @Id
     String id;
     String name;
-    long date; //UTC+2 hodiny
+    long date;
     float temp;
     float humidity;
     float windSpeed;

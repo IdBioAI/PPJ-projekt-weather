@@ -46,12 +46,18 @@ public class MainPage {
         ve.init();
     }
 
-    public String showMainPage(int week) throws Exception {
+    /**
+     *
+     * @param days - o kolik dní zpět se mají nahrát data
+     * @return
+     * @throws Exception
+     */
+    public String showMainPage(int days) throws Exception {
 
         String stateName = mySQLService.getState().get(0).getStateName();
         //List<CityMg> cities = Main.getMongoDBService().SelectValues();
         List<CityMySQL> cities = mySQLService.getAllCities();
-        findWeather(cities, week);
+        addWeatherToCities(cities, days);
         calculateAverageTemp(cities);
         unixTimeToDate(cities);
         List<String> states = openWeatherService.getAllCountries();
@@ -74,25 +80,14 @@ public class MainPage {
     public void unixTimeToDate(List<CityMySQL> cities) {
 
         Date date;
-        SimpleDateFormat sdf;
+        SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyy HH:mm:ss");
 
         for(CityMySQL c : cities){
             for(CityMg cityData : c.getCities()) {
                 date = new java.util.Date((long)cityData.getDate()*1000L);
-                sdf = new java.text.SimpleDateFormat("dd-MM-yyy HH:mm:ss");
                 cityData.setDateStr(sdf.format(date));
             }
         }
-    }
-
-    public long timeToUnix(String timestamp) throws Exception{
-
-        long epoch;
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy HH:mm:ss");
-        Date dt = sdf.parse(timestamp);
-        epoch = dt.getTime();
-        return (epoch / 1000);
     }
 
     public void calculateAverageTemp(List<CityMySQL> cities) {
@@ -112,24 +107,19 @@ public class MainPage {
         }
     }
 
-    public void findWeather(List<CityMySQL> cities, int week) {
+    /**
+     *
+     * @param cities
+     * @param days - o kolik dní zpět se mají nahrát data
+     */
+    public void addWeatherToCities(List<CityMySQL> cities, int days) {
 
-        long epoch = 0;
-
-        if(week == 0) {
-            epoch = Instant.now().getEpochSecond() - 86400;
-        }
-        else if(week == 1) {
-            epoch = Instant.now().getEpochSecond() - 604801;
-        }
-
-        else if(week == 2) {
-            epoch = Instant.now().getEpochSecond() - 1209601;
-        }
+        long epoch = Instant.now().getEpochSecond() - (24 * 60 * 60 *  days);
 
         for(CityMySQL c : cities){
             c.setCities(mongoDBService.selectValues(c.getCityName(), epoch));
         }
+
     }
 
 }

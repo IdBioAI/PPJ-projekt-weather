@@ -7,5 +7,4 @@ import java.util.List;
 
 @Repository
 public interface ConfigRepository extends CrudRepository<Config, String> {
-    public Config findByName(String name);
 }

@@ -1,4 +1,4 @@
-package com.weather.weather.rest.modelJSON;
+package com.weather.weather.model;
 
 public class CityData {
     String name;
@@ -7,9 +7,6 @@ public class CityData {
     public CityData(String name, String date) {
         this.name = name;
         this.date = date;
-    }
-
-    public CityData() {
     }
 
     public String getName() {

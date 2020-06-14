@@ -17,6 +17,9 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 @SpringBootApplication
 //@EnableConfigurationProperties
 @ConfigurationPropertiesScan("com.weather.weather")
@@ -25,6 +28,12 @@ public class Main implements CommandLineRunner{
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
+    }
+
+    public static String getStackTrace(Exception e){
+        StringWriter sw = new StringWriter();
+        e.printStackTrace(new PrintWriter(sw));
+        return sw.toString();
     }
 
     @Override

@@ -1,10 +1,11 @@
 package com.weather.weather.rest;
 
 
+import com.weather.weather.Main;
 import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.configurations.FileStorageProperties;
 import com.weather.weather.model.CityMySQL;
-import com.weather.weather.rest.modelJSON.CityData;
+import com.weather.weather.model.CityData;
 import com.weather.weather.services.MongoDBService;
 import com.weather.weather.services.MySQLService;
 import com.weather.weather.view.MainPage;
@@ -43,7 +44,7 @@ public class RestAPIControl {
             data = getData(0);
             return data;
         }catch (Exception e){
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -59,7 +60,7 @@ public class RestAPIControl {
             data =  getData(1);
             return data;
         }catch (Exception e){
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -75,7 +76,7 @@ public class RestAPIControl {
             data =  getData(2);
             return data;
         }catch (Exception e){
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -85,15 +86,15 @@ public class RestAPIControl {
     @RequestMapping(value = "api/state/change/{state}", method = RequestMethod.PUT)
     public int updateState(@PathVariable("state")  String state) {
         if(configProperties.isReadOnly()){
-            return 403;
+            return HttpServletResponse.SC_FORBIDDEN;
         }
 
         try {
             mySQLService.changeState(state);
-            return 202;
+            return HttpServletResponse.SC_ACCEPTED;
         } catch (Exception e) {
-            log.error(e.getMessage());
-            return 304;
+            log.error(Main.getStackTrace(e));
+            return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
 
@@ -101,15 +102,15 @@ public class RestAPIControl {
     public int addCity(@PathVariable("city") String cityName) {
 
         if(configProperties.isReadOnly()){
-            return 403;
+            return HttpServletResponse.SC_FORBIDDEN;
         }
 
         try{
             mySQLService.addCity(cityName);
-            return 202;
+            return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(e.getMessage());
-            return 304;
+            log.error(Main.getStackTrace(e));
+            return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
 
@@ -117,16 +118,16 @@ public class RestAPIControl {
     public int deleteCity(@PathVariable("city")  String cityName) {
 
         if(configProperties.isReadOnly()){
-            return 403;
+            return HttpServletResponse.SC_FORBIDDEN;
         }
 
         try {
             mySQLService.deleteCity(cityName);
             mongoDBService.deleteCities(cityName);
-            return 202;
+            return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(e.getMessage());
-            return 304;
+            log.error(Main.getStackTrace(e));
+            return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
 
@@ -140,21 +141,21 @@ public class RestAPIControl {
     public int deleteTemp(@RequestBody CityData cityData) {
 
         if(configProperties.isReadOnly()){
-            return 403;
+            return HttpServletResponse.SC_FORBIDDEN;
         }
 
         try {
             mongoDBService.deleteDate(cityData.getName(), cityData.getDate());
-            return 202;
+            return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(e.getMessage());
-            return 304;
+            log.error(Main.getStackTrace(e));
+            return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
 
     private List<CityMySQL> getData(int week){
         List<CityMySQL> cities = mySQLService.getAllCities();
-        mainPage.findWeather(cities, week);
+        mainPage.addWeatherToCities(cities, week);
         mainPage.calculateAverageTemp(cities);
         mainPage.unixTimeToDate(cities);
         return cities;

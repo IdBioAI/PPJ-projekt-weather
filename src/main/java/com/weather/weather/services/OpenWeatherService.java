@@ -1,5 +1,6 @@
 package com.weather.weather.services;
 
+import com.weather.weather.Main;
 import com.weather.weather.configurations.ConfigProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.model.CityMySQL;
@@ -104,7 +105,7 @@ public class OpenWeatherService {
         try {
             new JSONArray(test);
         } catch (Exception ex) {
-            log.error(ex.getMessage());
+            log.error(Main.getStackTrace(ex));
             return false;
         }
         return true;
@@ -114,7 +115,7 @@ public class OpenWeatherService {
         try {
             new JSONObject(test);
         } catch (Exception ex) {
-            log.error(ex.getMessage());
+            log.error(Main.getStackTrace(ex));
             return false;
         }
         return true;

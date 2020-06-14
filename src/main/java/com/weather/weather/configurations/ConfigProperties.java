@@ -11,7 +11,6 @@ public class ConfigProperties {
     private int updateTime;
     private boolean readOnly;
     private boolean importOnStartUp;
-    private String Import;
     private boolean update;
     private String apiKey;
     private int expirationTime;
@@ -38,14 +37,6 @@ public class ConfigProperties {
 
     public boolean isImportOnStartUp() {
         return importOnStartUp;
-    }
-
-    public String getImport() {
-        return Import;
-    }
-
-    public void setImport(String anImport) {
-        Import = anImport;
     }
 
     public boolean isUpdate() {

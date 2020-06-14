@@ -29,7 +29,7 @@ public class UpdateWeatherService extends TimerTask {
         try {
             openWeatherService.openWeatherService.update();
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
         }
     }
 

@@ -5,6 +5,7 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.weather.weather.Main;
 import com.weather.weather.configurations.FileStorageProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.services.MongoDBService;
@@ -20,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -46,9 +48,9 @@ public class WebControl {
     @GetMapping("/")
     public String getStateInfo() {
         try {
-            return mainPage.showMainPage(0);
+            return mainPage.showMainPage(1);
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
         }
         return "Error";
     }
@@ -56,21 +58,21 @@ public class WebControl {
     @GetMapping("/week")
     public String getWeekInfo() {
         try {
-            return mainPage.showMainPage(1);
+            return mainPage.showMainPage(7);
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
+            return "Error " + e.getMessage();
         }
-        return "Error";
     }
 
     @GetMapping("/week2")
     public String getWeek2Info() {
         try {
-            return mainPage.showMainPage(2);
+            return mainPage.showMainPage(14);
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
+            return "Error " + e.getMessage();
         }
-        return "Error";
     }
 
     @PostMapping("/city/import")
@@ -97,8 +99,11 @@ public class WebControl {
 
             response.sendRedirect("/");
 
+            // vymazání tmp souboru
+            new File(fileStorageProperties.getUploadDir() + file.getOriginalFilename()).delete();
+
         } catch (IOException e) {
-            log.error(e.getMessage());
+            log.error(Main.getStackTrace(e));
         }
     }
 
@@ -123,7 +128,7 @@ public class WebControl {
             writer.write(mongoDBService.selectValuesByName(filename));
 
         }catch (Exception ex){
-            log.error(ex.getMessage());
+            log.error(Main.getStackTrace(ex));
         }
     }
 
