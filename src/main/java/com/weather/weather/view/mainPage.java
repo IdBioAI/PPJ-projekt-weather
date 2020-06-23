@@ -107,6 +107,10 @@ public class MainPage {
         }
     }
 
+    public long daysToSeconds(int days){
+        return 24 * 60 * 60 *  days;
+    }
+
     /**
      *
      * @param cities
@@ -114,7 +118,7 @@ public class MainPage {
      */
     public void addWeatherToCities(List<CityMySQL> cities, int days) {
 
-        long epoch = Instant.now().getEpochSecond() - (24 * 60 * 60 *  days);
+        long epoch = Instant.now().getEpochSecond() - daysToSeconds(days);
 
         for(CityMySQL c : cities){
             c.setCities(mongoDBService.selectValues(c.getCityName(), epoch));

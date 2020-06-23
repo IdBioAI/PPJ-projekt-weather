@@ -1,14 +1,12 @@
 package com.weather.weather.services;
 
 import com.weather.weather.Main;
-import org.aspectj.apache.bcel.classfile.Module;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.TimerTask;
 
 @Service
@@ -29,7 +27,7 @@ public class UpdateWeatherService extends TimerTask {
         try {
             openWeatherService.openWeatherService.update();
         } catch (Exception e) {
-            log.error(Main.getStackTrace(e));
+            log.error(Main.logError(e, "error while update weather"));
         }
     }
 

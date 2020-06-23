@@ -21,9 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -50,7 +48,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(1);
         } catch (Exception e) {
-            log.error(Main.getStackTrace(e));
+            log.error(Main.logError(e, "Mapping error /"));
         }
         return "Error";
     }
@@ -60,7 +58,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(7);
         } catch (Exception e) {
-            log.error(Main.getStackTrace(e));
+            log.error(Main.logError(e, "Mapping error /week"));
             return "Error " + e.getMessage();
         }
     }
@@ -70,7 +68,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(14);
         } catch (Exception e) {
-            log.error(Main.getStackTrace(e));
+            log.error(Main.logError(e, "Mapping error /week2"));
             return "Error " + e.getMessage();
         }
     }
@@ -80,11 +78,12 @@ public class WebControl {
         try {
 
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename());
-            Files.write(path, bytes);
+            //Path path = Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename());
+            //Files.write(path, bytes);
 
             // import do databáze
-            Reader reader = Files.newBufferedReader(Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename()));
+            //Reader reader = Files.newBufferedReader(Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename()));
+            Reader reader = new InputStreamReader(new ByteArrayInputStream(bytes));
             CsvToBean<CityMg> csvToBean = new CsvToBeanBuilder(reader)
                     .withType(CityMg.class)
                     .withIgnoreLeadingWhiteSpace(true)
@@ -100,10 +99,10 @@ public class WebControl {
             response.sendRedirect("/");
 
             // vymazání tmp souboru
-            new File(fileStorageProperties.getUploadDir() + file.getOriginalFilename()).delete();
+           // new File(fileStorageProperties.getUploadDir() + file.getOriginalFilename()).delete();
 
         } catch (IOException e) {
-            log.error(Main.getStackTrace(e));
+            log.error(Main.logError(e, "Mapping error /city/import"));
         }
     }
 
@@ -128,7 +127,7 @@ public class WebControl {
             writer.write(mongoDBService.selectValuesByName(filename));
 
         }catch (Exception ex){
-            log.error(Main.getStackTrace(ex));
+            log.error(Main.logError(ex, "Mapping error /city/export"));
         }
     }
 

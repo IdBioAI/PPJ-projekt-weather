@@ -105,7 +105,7 @@ public class OpenWeatherService {
         try {
             new JSONArray(test);
         } catch (Exception ex) {
-            log.error(Main.getStackTrace(ex));
+            log.error(Main.logError(ex, "error while checking JSONArray"));
             return false;
         }
         return true;
@@ -115,7 +115,7 @@ public class OpenWeatherService {
         try {
             new JSONObject(test);
         } catch (Exception ex) {
-            log.error(Main.getStackTrace(ex));
+            log.error(Main.logError(ex, "error while checking JSONObject"));
             return false;
         }
         return true;
