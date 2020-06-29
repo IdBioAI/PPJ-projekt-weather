@@ -5,7 +5,6 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
-import com.weather.weather.Main;
 import com.weather.weather.configurations.FileStorageProperties;
 import com.weather.weather.model.CityMg;
 import com.weather.weather.services.MongoDBService;
@@ -21,10 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Iterator;
 
 @RestController
@@ -48,7 +47,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(1);
         } catch (Exception e) {
-            log.error(Main.logError(e, "Mapping error /"));
+            log.error("Mapping error /", e);
         }
         return "Error";
     }
@@ -58,7 +57,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(7);
         } catch (Exception e) {
-            log.error(Main.logError(e, "Mapping error /week"));
+            log.error("Mapping error /week", e);
             return "Error " + e.getMessage();
         }
     }
@@ -68,7 +67,7 @@ public class WebControl {
         try {
             return mainPage.showMainPage(14);
         } catch (Exception e) {
-            log.error(Main.logError(e, "Mapping error /week2"));
+            log.error("Mapping error /week2", e);
             return "Error " + e.getMessage();
         }
     }
@@ -76,14 +75,8 @@ public class WebControl {
     @PostMapping("/city/import")
     public void uploadFile(HttpServletResponse response, @RequestParam("file") MultipartFile file) {
         try {
+            Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()));
 
-            byte[] bytes = file.getBytes();
-            //Path path = Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename());
-            //Files.write(path, bytes);
-
-            // import do databáze
-            //Reader reader = Files.newBufferedReader(Paths.get(fileStorageProperties.getUploadDir() + file.getOriginalFilename()));
-            Reader reader = new InputStreamReader(new ByteArrayInputStream(bytes));
             CsvToBean<CityMg> csvToBean = new CsvToBeanBuilder(reader)
                     .withType(CityMg.class)
                     .withIgnoreLeadingWhiteSpace(true)
@@ -91,18 +84,14 @@ public class WebControl {
 
             Iterator<CityMg> csvUserIterator = csvToBean.iterator();
 
-            CityMg cityMg;
             while (csvUserIterator.hasNext()) {
                 mongoDBService.saveData(csvUserIterator.next());
             }
 
             response.sendRedirect("/");
 
-            // vymazání tmp souboru
-           // new File(fileStorageProperties.getUploadDir() + file.getOriginalFilename()).delete();
-
         } catch (IOException e) {
-            log.error(Main.logError(e, "Mapping error /city/import"));
+            log.error("Mapping error /city/import", e);
         }
     }
 
@@ -127,7 +116,7 @@ public class WebControl {
             writer.write(mongoDBService.selectValuesByName(filename));
 
         }catch (Exception ex){
-            log.error(Main.logError(ex, "Mapping error /city/export"));
+            log.error("Mapping error /city/export", ex);
         }
     }
 

@@ -43,7 +43,7 @@ public class SelfCheckService {
             }
 
         }catch (Exception ex){
-            log.error(Main.logError(ex, "SelfCheck Error"));
+            log.error("SelfCheck Error", ex);
             SpringApplication.exit(appContext, () -> 1);
         }
     }

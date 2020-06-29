@@ -27,7 +27,7 @@ public class UpdateWeatherService extends TimerTask {
         try {
             openWeatherService.openWeatherService.update();
         } catch (Exception e) {
-            log.error(Main.logError(e, "error while update weather"));
+            log.error("error while update weather", e);
         }
     }
 

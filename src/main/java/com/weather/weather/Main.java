@@ -19,12 +19,6 @@ public class Main implements CommandLineRunner{
         SpringApplication.run(Main.class, args);
     }
 
-    public static String logError(Exception e, String message){
-        StringWriter sw = new StringWriter();
-        e.printStackTrace(new PrintWriter(sw));
-        return message + " - " + e.getMessage() + ": " + sw.toString();
-    }
-
     @Override
     public void run(String... args){ }
 

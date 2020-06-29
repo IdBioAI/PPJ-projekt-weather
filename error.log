@@ -1,366 +1,48 @@
-2020-06-23 00:00:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:03:13.201  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:06:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:09:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:12:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:15:13.166  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:18:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:21:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:24:13.165  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:27:13.163  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:30:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:33:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:36:13.177  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:39:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:42:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:45:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:48:13.177  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:51:13.188  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:54:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 00:57:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:00:13.159  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:03:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:06:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:09:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:12:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:15:13.185  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:18:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:21:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:24:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:27:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:30:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:33:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:36:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:39:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:42:13.214  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:45:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:48:13.178  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:51:13.157  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:54:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 01:57:13.177  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:00:13.155  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:03:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:06:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:09:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:12:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:15:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:18:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:21:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:24:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:27:13.173  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:30:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:33:13.162  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:36:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:39:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:42:13.355  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:45:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:48:13.380  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:51:13.228  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:54:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 02:57:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:00:13.171  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:03:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:06:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:09:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:12:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:15:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:18:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:21:13.150  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:24:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:27:13.153  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:30:13.150  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:33:13.176  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:36:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:39:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:42:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:45:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:48:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:51:13.162  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:54:13.199  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 03:57:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:00:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:03:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:06:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:09:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:12:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:15:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:18:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:21:13.249  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:24:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:27:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:30:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:33:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:36:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:39:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:42:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:45:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:48:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:51:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:54:13.166  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 04:57:13.199  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:00:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:03:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:06:13.173  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:09:13.168  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:12:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:15:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:18:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:21:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:24:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:27:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:30:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:33:13.171  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:36:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:39:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:42:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:45:13.164  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:48:13.172  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:51:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:54:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 05:57:13.158  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:00:13.174  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:03:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:06:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:09:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:12:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:15:13.173  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:18:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:21:13.180  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:24:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:27:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:30:13.170  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:33:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:36:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:39:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:42:13.131  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:45:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:48:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:51:13.169  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:54:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 06:57:13.160  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:00:13.239  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:03:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:06:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:09:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:12:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:15:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:18:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:21:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:24:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:27:13.251  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:30:13.242  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:33:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:36:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:39:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:42:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:45:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:48:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:51:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:54:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 07:57:13.161  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:00:13.215  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:03:13.154  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:06:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:09:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:12:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:15:13.158  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:18:13.150  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:21:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:24:13.182  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:27:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:30:13.200  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:33:13.220  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:36:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:39:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:42:13.158  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:45:13.169  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:48:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:51:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:54:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 08:57:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:00:13.181  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:03:13.263  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:06:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:09:13.162  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:12:13.175  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:15:13.212  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:18:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:21:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:24:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:27:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:30:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:33:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:36:13.240  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:39:13.171  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:42:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:45:13.159  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:48:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:51:13.160  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:54:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 09:57:13.178  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:00:13.206  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:03:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:06:13.162  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:09:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:12:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:15:13.265  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:18:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:21:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:24:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:27:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:30:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:33:13.129  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:36:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:39:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:42:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:45:13.160  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:48:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:51:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:54:13.193  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 10:57:13.150  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:00:13.544  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:03:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:06:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:09:13.203  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:12:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:15:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:18:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:21:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:24:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:27:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:30:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:33:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:36:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:39:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:42:13.217  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:45:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:48:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:51:13.165  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:54:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 11:57:13.152  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:00:13.191  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:03:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:06:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:09:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:12:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:15:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:18:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:21:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:24:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:27:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:30:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:33:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:36:13.190  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:39:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:42:13.166  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:45:13.179  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:48:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:51:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:54:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 12:57:13.687  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:00:13.153  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:03:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:06:13.251  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:09:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:12:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:15:13.154  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:18:13.141  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:21:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:24:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:27:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:30:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:33:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:36:13.151  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:39:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:42:14.162  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:45:13.164  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:48:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:51:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:54:13.183  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 13:57:13.158  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:00:13.199  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:03:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:06:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:09:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:12:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:15:13.156  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:18:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:21:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:24:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:27:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:30:13.159  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:33:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:36:13.231  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:39:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:42:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:45:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:48:13.155  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:51:13.153  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:54:13.135  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 14:57:13.163  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:00:13.184  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:03:13.201  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:06:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:09:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:12:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:15:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:18:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:21:13.161  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:24:13.189  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:27:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:30:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:33:13.137  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:36:13.163  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:39:13.145  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:42:13.187  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:45:13.154  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:48:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:51:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:54:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 15:57:13.177  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:00:13.190  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:03:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:06:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:09:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:12:13.149  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:15:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:18:13.160  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:21:13.142  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:24:13.193  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:27:13.248  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:30:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:33:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:36:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:39:13.132  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:42:13.131  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:45:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:48:13.139  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:51:13.154  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:54:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 16:57:13.132  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:00:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:03:13.134  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:06:13.131  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:09:13.132  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:12:13.132  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:15:13.143  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:18:13.132  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:21:13.140  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:24:13.160  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:27:13.133  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:30:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:33:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:36:13.157  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:39:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:42:13.174  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:45:13.184  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:48:13.147  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:51:13.144  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:54:13.138  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 17:57:13.146  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:00:13.327  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:03:13.171  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:06:13.241  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:09:13.136  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:12:13.148  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
-2020-06-23 18:15:13.174  INFO 24560 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 00:01:52.325  WARN 28632 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m25s243ms22µs800ns).
+2020-06-30 00:01:52.378  INFO 28632 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-30 00:01:52.382  INFO 28632 --- [SpringContextShutdownHook] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:2}] to 127.0.0.1:27017 because the pool has been closed.
+2020-06-30 00:01:52.384  INFO 28632 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-30 00:01:52.386  INFO 28632 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-30 00:01:52.390  INFO 28632 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-30 01:12:55.981  INFO 29160 --- [main] com.weather.weather.Main                 : Starting Main on DESKTOP-77ATMCM with PID 29160 (P:\skola\weather\target\classes started by JaroslavPC in P:\skola\weather)
+2020-06-30 01:12:55.982  INFO 29160 --- [main] com.weather.weather.Main                 : The following profiles are active: dev
+2020-06-30 01:12:56.093  WARN 29160 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-06-30 01:12:56.448  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 01:12:56.449  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-30 01:12:56.482  INFO 29160 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMgRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-06-30 01:12:56.511  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 3 JPA repository interfaces.
+2020-06-30 01:12:56.530  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 01:12:56.530  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-06-30 01:12:56.536  INFO 29160 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.CityMySQLRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-30 01:12:56.536  INFO 29160 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.ConfigRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-30 01:12:56.537  INFO 29160 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.weather.weather.model.StateRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2020-06-30 01:12:56.539  INFO 29160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2020-06-30 01:12:56.869  INFO 29160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-06-30 01:12:56.877  INFO 29160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-30 01:12:56.877  INFO 29160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-30 01:12:56.966  INFO 29160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-30 01:12:56.967  INFO 29160 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 955 ms
+2020-06-30 01:12:57.055  INFO 29160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-30 01:12:57.142  INFO 29160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-30 01:12:57.186  INFO 29160 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-30 01:12:57.257  INFO 29160 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-30 01:12:57.364  INFO 29160 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-30 01:12:57.443  INFO 29160 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: com.weather.weather.configurations.SQLiteDialect
+2020-06-30 01:12:57.875  INFO 29160 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-30 01:12:57.883  INFO 29160 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-30 01:12:58.133  INFO 29160 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-06-30 01:12:58.134  INFO 29160 --- [main] org.mongodb.driver.cluster               : Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-06-30 01:12:58.173  INFO 29160 --- [cluster-ClusterId{value='5efa757a00adf52fb4d09c4a', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to 127.0.0.1:27017
+2020-06-30 01:12:58.176  INFO 29160 --- [cluster-ClusterId{value='5efa757a00adf52fb4d09c4a', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 5]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2305900}
+2020-06-30 01:12:58.176  INFO 29160 --- [cluster-ClusterId{value='5efa757a00adf52fb4d09c4a', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-06-30 01:12:58.396  WARN 29160 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-30 01:12:58.464  INFO 29160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 01:12:58.620  INFO 29160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-06-30 01:12:58.622  INFO 29160 --- [main] com.weather.weather.Main                 : Started Main in 2.892 seconds (JVM running for 3.81)
+2020-06-30 01:12:59.112  INFO 29160 --- [Timer-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to 127.0.0.1:27017
+2020-06-30 01:12:59.123  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 01:15:58.534  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 01:18:58.553  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 01:21:58.550  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 01:24:58.531  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update
+2020-06-30 01:27:58.524  INFO 29160 --- [Timer-0] c.w.weather.services.OpenWeatherService  : Prague update

@@ -44,7 +44,7 @@ public class RestAPIControl {
             data = getData(0);
             return data;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/day"));
+            log.error("Mapping error api/day", e);
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -60,7 +60,7 @@ public class RestAPIControl {
             data =  getData(1);
             return data;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/week"));
+            log.error("Mapping error api/week", e);
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -76,7 +76,7 @@ public class RestAPIControl {
             data =  getData(2);
             return data;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/week2"));
+            log.error("Mapping error api/week2", e);
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
 
@@ -93,7 +93,7 @@ public class RestAPIControl {
             mySQLService.changeState(state);
             return HttpServletResponse.SC_ACCEPTED;
         } catch (Exception e) {
-            log.error(Main.logError(e, "Mapping error api/state/change"));
+            log.error("Mapping error api/state/change", e);
             return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
@@ -109,7 +109,7 @@ public class RestAPIControl {
             mySQLService.addCity(cityName);
             return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/city/add"));
+            log.error("Mapping error api/city/add", e);
             return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
@@ -126,7 +126,7 @@ public class RestAPIControl {
             mongoDBService.deleteCities(cityName);
             return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/city/delete"));
+            log.error("Mapping error api/city/delete", e);
             return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
@@ -148,7 +148,7 @@ public class RestAPIControl {
             mongoDBService.deleteDate(cityData.getName(), cityData.getDate());
             return HttpServletResponse.SC_ACCEPTED;
         }catch (Exception e){
-            log.error(Main.logError(e, "Mapping error api/temp/delete"));
+            log.error("Mapping error api/temp/delete", e);
             return HttpServletResponse.SC_NOT_MODIFIED;
         }
     }
